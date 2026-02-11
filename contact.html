@@ -6,7 +6,7 @@
     <title>Contact - Cloud Services LLC</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -14,52 +14,65 @@
 <header class="navbar">
     <div class="nav-container">
         <a href="index.html" class="logo-link">
-            <img src="assets/logo.png" class="logo" alt="Cloud Services LLC Logo">
+            <img src="assets/logo.png" class="logo" alt="Logo">
             <span class="logo-text">Cloud Services LLC</span>
         </a>
         <nav class="nav-links">
             <a href="index.html">Home</a>
-            <button id="modeToggle">
+            <a href="projects.html">Projects</a>
+            <button id="modeToggle" aria-label="Toggle Dark Mode">
                 <span class="icon-sun">☀️</span>
                 <span class="icon-moon">🌙</span>
             </button>
         </nav>
+        <button class="mobile-menu-btn">☰</button>
     </div>
 </header>
 
-<section class="section page-header">
-    <h1>Get in Touch</h1>
-    <p>Available for Cloud Consulting and Contract Engineering.</p>
-</section>
-
 <section class="section">
-    <div class="card contact-card">
-        <h3>Contact Information</h3>
-        <p>Whether you need an architecture review or a full-scale DevOps implementation, I am ready to assist.</p>
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+        <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px;">Let's Start a Conversation</h1>
+        <p style="font-size: 1.2rem;">Available for Cloud Consulting, Architecture Reviews, and Full-Scale DevOps Implementation.</p>
+    </div>
+
+    <div class="contact-grid">
         
-        <div class="contact-details">
-            <div class="contact-item">
-                <strong>Email:</strong> 
-                <a href="mailto:info@cloudservicesllc.org">info@cloudservicesllc.org</a>
-            </div>
-            <div class="contact-item">
-                <strong>Direct:</strong> 
-                <a href="mailto:sridharkrrenangi@gmail.com">sridharkrrenangi@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <strong>Location:</strong> 
-                <span>Hillsboro, OR (Remote Available)</span>
-            </div>
-            <div class="contact-item">
-                <strong>LinkedIn:</strong> 
-                <a href="https://linkedin.com/in/renangisridhar/" target="_blank">linkedin.com/in/renangisridhar/</a>
-            </div>
+        <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <span class="contact-label">Business Inquiries</span>
+            <a href="mailto:info@cloudservicesllc.org" class="contact-link">info@cloudservicesllc.org</a>
         </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">👤</span>
+            <span class="contact-label">Direct Contact</span>
+            <a href="mailto:sridharkrrenangi@gmail.com" class="contact-link">sridharkrrenangi@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">💼</span>
+            <span class="contact-label">Connect on LinkedIn</span>
+            <a href="https://linkedin.com/in/renangisridhar/" target="_blank" class="contact-link">/in/renangisridhar</a>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span class="contact-label">Location</span>
+            <span class="contact-link" style="color: var(--text-primary); cursor: default;">Hillsboro, Oregon<br><span style="font-size: 0.9rem; opacity: 0.7;">(Remote Available)</span></span>
+        </div>
+
     </div>
 </section>
 
 <footer class="footer">
-    <p>© 2026 Cloud Services LLC</p>
+    <div class="footer-content">
+        <img src="assets/logo.png" alt="Cloud Services LLC" class="footer-logo">
+        <p>© 2026 Cloud Services LLC • Built for Scale & Security</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/renangisridhar/" target="_blank">LinkedIn</a>
+            <a href="mailto:info@cloudservicesllc.org">Email</a>
+        </div>
+    </div>
 </footer>
 
 </body>
