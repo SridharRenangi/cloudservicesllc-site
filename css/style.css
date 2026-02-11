@@ -44,7 +44,7 @@ body {
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-/* Navbar - High Visibility Logo */
+/* Navbar */
 .navbar {
     position: fixed; top: 0; width: 100%;
     background: var(--navbar-bg);
@@ -58,11 +58,11 @@ body {
 }
 .logo-link { display: flex; align-items: center; text-decoration: none; color: var(--navbar-text); }
 .logo { 
-    height: 60px; /* Larger */
+    height: 60px; /* Logo Size */
     width: auto;
     margin-right: 15px; 
     transition: transform 0.2s;
-    /* This white drop-shadow ensures the blue logo is visible even on dark backgrounds */
+    /* Drop shadow to make it pop */
     filter: drop-shadow(0 0 2px rgba(255,255,255,0.8));
 }
 .logo-link:hover .logo { transform: scale(1.05); }
@@ -93,7 +93,7 @@ body {
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.2); }
 
-/* Hero Section with HIGH QUALITY WATERMARK */
+/* Hero Section with EMBEDDED WATERMARK */
 .hero {
     background: var(--hero-gradient); color: white;
     padding: 200px 20px 140px; text-align: center;
@@ -103,19 +103,20 @@ body {
 .hero::before {
     content: '';
     position: absolute;
-    top: 55%; left: 50%; /* Positioned slightly lower to sit behind text */
+    top: 55%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px; height: 700px; /* Large Size */
+    width: 700px; height: 700px;
     
-    /* Using the new SVG ensures it is crisp */
-    background-image: url('../assets/logo.svg'); 
+    /* BELOW IS THE EMBEDDED LOGO CODE. 
+       This ensures the watermark works even if you lose the image file.
+    */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3e%3cpath fill='%23ffffff' d='M280,130 c0-44.18-35.82-80-80-80 c-36.5,0-67.5,24.5-77,58 C118,106,113,105,108,105 c-38,0-70,30-70,68 c0,35,30,65,65,65 h180 c35,0,65-28,65-63 C348,150,318,130,280,130z'/%3e%3cpath fill='%23ffffff' d='M180,180 L220,140 L220,160 L260,120 L220,120 L220,140 L180,180 Z' opacity='0.9'/%3e%3c/svg%3e");
+    
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     
-    /* Adjusted opacity for "Shadow" effect */
     opacity: 0.12; 
-    filter: grayscale(100%) brightness(200%); /* Makes it a white 'ghost' image */
     pointer-events: none;
     z-index: 1;
 }
@@ -129,7 +130,7 @@ body {
 }
 .hero-btns { display: flex; gap: 20px; justify-content: center; }
 
-/* Cards & Other CSS remains standard */
+/* Cards & Other CSS */
 .card {
     background: var(--card-bg); padding: 35px; border-radius: 16px;
     box-shadow: var(--shadow); border: 1px solid var(--border-color);
@@ -139,6 +140,7 @@ body {
 h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--text-primary); font-weight: 700; }
 h3 { margin-bottom: 10px; color: var(--text-primary); font-size: 1.4rem; }
 p { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
+
 .contact-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px; margin-top: 40px;
@@ -152,6 +154,7 @@ p { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
 .contact-label { display: block; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 5px; font-weight: 600; }
 .contact-link { font-size: 1.1rem; color: var(--accent-color); text-decoration: none; font-weight: 600; word-break: break-all; }
 .contact-link:hover { text-decoration: underline; }
+
 .project-tag {
     display: inline-block; background: rgba(37, 99, 235, 0.1); color: var(--accent-color);
     font-size: 0.75rem; padding: 6px 12px; border-radius: 20px; margin-bottom: 15px;
@@ -170,6 +173,7 @@ p { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
 .dark .icon-moon { display: none; }
 body:not(.dark) .icon-sun { display: none; }
 body:not(.dark) .icon-moon { display: inline; }
+
 .footer {
     background: #0f172a; color: white; padding: 60px 20px;
     margin-top: 80px; border-top: 1px solid #1e293b;
@@ -178,10 +182,10 @@ body:not(.dark) .icon-moon { display: inline; }
     max-width: 1200px; margin: 0 auto;
     display: flex; flex-direction: column; align-items: center; text-align: center;
 }
-.footer-logo { height: 50px; margin-bottom: 20px; opacity: 1; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
 .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 30px; }
 .social-links a { color: #94a3b8; text-decoration: none; font-weight: 500; transition: color 0.2s; }
 .social-links a:hover { color: white; }
+
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .mobile-menu-btn { display: block; }

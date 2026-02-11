@@ -14,7 +14,18 @@
 <header class="navbar">
     <div class="nav-container">
         <a href="index.html" class="logo-link">
-            <img src="assets/logo.png" class="logo" alt="Cloud Services LLC Logo">
+            <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+                <defs>
+                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#0056b3;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path fill="url(#grad3)" d="M280,130 c0-44.18-35.82-80-80-80 c-36.5,0-67.5,24.5-77,58 C118,106,113,105,108,105 c-38,0-70,30-70,68 c0,35,30,65,65,65 h180 c35,0,65-28,65-63 C348,150,318,130,280,130z"/>
+                <path fill="#ffffff" d="M180,180 L220,140 L220,160 L260,120 L220,120 L220,140 L180,180 Z" opacity="0.9"/>
+                <text x="200" y="260" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#333" letter-spacing="2">CLOUD SERVICES</text>
+                <text x="200" y="290" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#007bff" letter-spacing="4">LLC</text>
+            </svg>
             <span class="logo-text">Cloud Services LLC</span>
         </a>
         <nav class="nav-links">
@@ -41,35 +52,40 @@
             <div class="project-tag">Cloud Infrastructure</div>
             <h3>End-to-End Terraform Provisioning</h3>
             <p><strong>Role:</strong> Software Developer @ Keypixel IT Solutions</p>
-            <p>Orchestrated modular VPC architectures using Terraform and AWS CloudFormation. Achieved 100% configuration parity between development and production environments, mirroring complex hardware testing labs.</p>
+            <p>Orchestrated modular VPC architectures using Terraform and AWS CloudFormation. Achieved 100% configuration parity between development and production environments, mirroring complex hardware testing labs[cite: 30].</p>
         </div>
 
         <div class="card project-card">
             <div class="project-tag">Serverless Data</div>
             <h3>Real-Time Telemetry Pipeline</h3>
             <p><strong>Role:</strong> Software Developer @ Keypixel IT Solutions</p>
-            <p>Engineered a high-throughput data ingestion pipeline using AWS Lambda and DynamoDB. Utilized Boto3 for automated data validation, reducing manual analysis time by 40%.</p>
+            <p>Engineered a high-throughput data ingestion pipeline using AWS Lambda and DynamoDB. Utilized Boto3 for automated data validation, reducing manual analysis time by 40%[cite: 31].</p>
         </div>
 
         <div class="card project-card">
             <div class="project-tag">Aerospace / Avionics</div>
             <h3>Rolls-Royce Trent Engine Validation</h3>
             <p><strong>Role:</strong> System Engineer @ TCS</p>
-            <p>Performed Hardware-Software Integration (HSI) testing for the Trent XWB engine. Validated control system behavior in simulated aerospace environments (temperature/altitude profiles) ensuring compliance with DO-178B standards.</p>
+            <p>Performed Hardware-Software Integration (HSI) testing for the Trent XWB engine. Validated control system behavior in simulated aerospace environments (temperature/altitude profiles) ensuring compliance with DO-178B standards[cite: 61, 62].</p>
         </div>
 
         <div class="card project-card">
-            <div class="project-tag">Security</div>
-            <h3>Zero-Trust Cloud Security Implementation</h3>
+            <div class="project-tag">Automation & Databases</div>
+            <h3>Serverless Workflow Automation</h3>
             <p><strong>Role:</strong> AWS Developer @ Arizona State University</p>
-            <p>Implemented VPC PrivateLink and strict IAM Permission Boundaries to secure sensitive engineering IP. Automated credential rotation using AWS Secrets Manager, achieving a 15% increase in security compliance.</p>
+            <p>Automated complex business logic by integrating AWS Step Functions with Lambda, improving process efficiency by 25%. Optimized Amazon RDS queries and reduced incident response time by 30% through proactive CloudWatch monitoring.</p>
         </div>
     </div>
 </section>
 
 <footer class="footer">
     <div class="footer-content">
-        <img src="assets/logo.png" alt="Cloud Services LLC" class="footer-logo">
+        <svg style="height:50px; width:auto; margin-bottom:20px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));" viewBox="0 0 400 300">
+             <path fill="url(#grad3)" d="M280,130 c0-44.18-35.82-80-80-80 c-36.5,0-67.5,24.5-77,58 C118,106,113,105,108,105 c-38,0-70,30-70,68 c0,35,30,65,65,65 h180 c35,0,65-28,65-63 C348,150,318,130,280,130z"/>
+             <path fill="#ffffff" d="M180,180 L220,140 L220,160 L260,120 L220,120 L220,140 L180,180 Z" opacity="0.9"/>
+             <text x="200" y="260" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#ccc" letter-spacing="2">CLOUD SERVICES</text>
+             <text x="200" y="290" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#007bff" letter-spacing="4">LLC</text>
+        </svg>
         <p>© 2026 Cloud Services LLC • Hillsboro, Oregon</p>
     </div>
 </footer>
