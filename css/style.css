@@ -58,15 +58,12 @@ body {
 }
 .logo-link { display: flex; align-items: center; text-decoration: none; color: var(--navbar-text); }
 .logo { 
-    height: 60px; /* Logo Size */
+    height: 55px; 
     width: auto;
-    margin-right: 15px; 
+    margin-right: 0; /* SVG text handles spacing */
     transition: transform 0.2s;
-    /* Drop shadow to make it pop */
-    filter: drop-shadow(0 0 2px rgba(255,255,255,0.8));
 }
-.logo-link:hover .logo { transform: scale(1.05); }
-.logo-text { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; }
+.logo-link:hover .logo { transform: scale(1.02); }
 
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links a {
@@ -93,7 +90,7 @@ body {
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.2); }
 
-/* Hero Section with EMBEDDED WATERMARK */
+/* Hero Section with CLOUD ARROW WATERMARK */
 .hero {
     background: var(--hero-gradient); color: white;
     padding: 200px 20px 140px; text-align: center;
@@ -105,18 +102,16 @@ body {
     position: absolute;
     top: 55%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px; height: 700px;
+    width: 600px; height: 300px;
     
-    /* BELOW IS THE EMBEDDED LOGO CODE. 
-       This ensures the watermark works even if you lose the image file.
-    */
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3e%3cpath fill='%23ffffff' d='M280,130 c0-44.18-35.82-80-80-80 c-36.5,0-67.5,24.5-77,58 C118,106,113,105,108,105 c-38,0-70,30-70,68 c0,35,30,65,65,65 h180 c35,0,65-28,65-63 C348,150,318,130,280,130z'/%3e%3cpath fill='%23ffffff' d='M180,180 L220,140 L220,160 L260,120 L220,120 L220,140 L180,180 Z' opacity='0.9'/%3e%3c/svg%3e");
+    /* Simplified Cloud for Watermark */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 120'%3e%3cpath fill='%23ffffff' d='M90,30 C90,12 75,0 58,0 C45,0 34,7 29,18 C25,16 21,15 17,15 C7,15 0,22 0,32 C0,34 0,35 1,37 L95,37 C93,34 90,32 90,30 Z' transform='translate(10, 10) scale(1.3)'/%3e%3cpath fill='%23ffffff' d='M30,55 L70,25 L65,40 L100,20 L80,20 L95,5 Z' transform='translate(15, 15)'/%3e%3c/svg%3e");
     
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     
-    opacity: 0.12; 
+    opacity: 0.1; 
     pointer-events: none;
     z-index: 1;
 }
@@ -130,7 +125,7 @@ body {
 }
 .hero-btns { display: flex; gap: 20px; justify-content: center; }
 
-/* Cards & Other CSS */
+/* Standard Cards */
 .card {
     background: var(--card-bg); padding: 35px; border-radius: 16px;
     box-shadow: var(--shadow); border: 1px solid var(--border-color);
