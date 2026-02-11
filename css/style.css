@@ -2,7 +2,7 @@
     /* Light Mode Variables */
     --bg-color: #f8f9fc;
     --card-bg: #ffffff;
-    --text-primary: #111827; /* Darker black for better readability */
+    --text-primary: #111827; 
     --text-secondary: #4b5563;
     --accent-color: #2563eb; 
     --accent-hover: #1d4ed8;
@@ -17,9 +17,9 @@
     /* Dark Mode Variables */
     --bg-color: #0f172a;
     --card-bg: #1e293b;
-    --text-primary: #f9fafb; /* Brighter white */
-    --text-secondary: #d1d5db; /* Light gray */
-    --accent-color: #60a5fa; /* Lighter blue for dark mode contrast */
+    --text-primary: #f9fafb; 
+    --text-secondary: #d1d5db; 
+    --accent-color: #60a5fa; 
     --accent-hover: #93c5fd;
     --navbar-bg: rgba(15, 23, 42, 0.95);
     --navbar-text: #f3f4f6;
@@ -36,14 +36,15 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     transition: background 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; /* Prevent horizontal scroll from watermark */
 }
 
 /* Layout */
-.section { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+.section { max-width: 1100px; margin: 0 auto; padding: 80px 20px; position: relative; z-index: 2; }
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-/* Navbar - Improved Logo Sizing */
+/* Navbar - Stronger Branding */
 .navbar {
     position: fixed; top: 0; width: 100%;
     background: var(--navbar-bg);
@@ -52,18 +53,19 @@ body {
     z-index: 1000;
 }
 .nav-container {
-    max-width: 1200px; margin: 0 auto; padding: 15px 25px;
+    max-width: 1200px; margin: 0 auto; padding: 10px 25px; /* Tighter padding */
     display: flex; justify-content: space-between; align-items: center;
 }
 .logo-link { display: flex; align-items: center; text-decoration: none; color: var(--navbar-text); }
 .logo { 
-    height: 48px; /* Increased from 36px */
+    height: 55px; /* Larger */
     width: auto;
     margin-right: 15px; 
-    transition: transform 0.2s;
+    transition: transform 0.2s, filter 0.2s;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
-.logo-link:hover .logo { transform: scale(1.05); }
-.logo-text { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; }
+.logo-link:hover .logo { transform: scale(1.05); filter: drop-shadow(0 4px 6px rgba(37, 99, 235, 0.3)); }
+.logo-text { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; }
 
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links a {
@@ -75,34 +77,51 @@ body {
 
 /* Buttons */
 .btn-primary {
-    background: var(--accent-color); color: white !important; /* Force white text */
+    background: var(--accent-color); color: white !important; 
     padding: 12px 24px; border-radius: 8px; font-weight: 600;
     transition: transform 0.2s, background 0.2s;
-    display: inline-block; text-decoration: none;
-    border: none;
+    display: inline-block; text-decoration: none; border: none;
 }
-.dark .btn-primary { color: #0f172a !important; } /* Dark text on light button in dark mode */
-
+.dark .btn-primary { color: #0f172a !important; }
 .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
 
 .btn-secondary {
-    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.4); color: white;
     padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none;
     display: inline-block;
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.2); }
 
-/* Hero Section - Fixed Visibility */
+/* Hero Section with LOGO WATERMARK */
 .hero {
     background: var(--hero-gradient); color: white;
     padding: 200px 20px 140px; text-align: center;
+    position: relative;
+    overflow: hidden;
 }
+/* The Watermark Logic */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background-image: url('../assets/logo.png'); /* References your logo */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.08; /* Subtle transparency */
+    filter: grayscale(100%) invert(100%); /* Makes it white/ghostly */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-content { position: relative; z-index: 2; }
+
 .hero h1 { font-size: 3.5rem; margin-bottom: 25px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; }
 .hero p { 
-    font-size: 1.35rem; 
-    color: rgba(255, 255, 255, 0.95); /* High contrast white */
-    max-width: 750px; margin: 0 auto 40px; 
-    font-weight: 400;
+    font-size: 1.35rem; color: rgba(255, 255, 255, 0.95);
+    max-width: 750px; margin: 0 auto 40px; font-weight: 400;
 }
 .hero-btns { display: flex; gap: 20px; justify-content: center; }
 
@@ -117,27 +136,19 @@ h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--text-primary); font-we
 h3 { margin-bottom: 10px; color: var(--text-primary); font-size: 1.4rem; }
 p { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
 
-/* Contact Specific - The "Attractive" Update */
+/* Contact Grid */
 .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; margin-top: 40px;
 }
 .contact-item {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    transition: all 0.2s;
+    background: var(--card-bg); padding: 30px; border-radius: 12px;
+    border: 1px solid var(--border-color); text-align: center; transition: all 0.2s;
 }
 .contact-item:hover { border-color: var(--accent-color); transform: translateY(-3px); }
 .contact-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
 .contact-label { display: block; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 5px; font-weight: 600; }
-.contact-link { 
-    font-size: 1.1rem; color: var(--accent-color); text-decoration: none; font-weight: 600; word-break: break-all; 
-}
+.contact-link { font-size: 1.1rem; color: var(--accent-color); text-decoration: none; font-weight: 600; word-break: break-all; }
 .contact-link:hover { text-decoration: underline; }
 
 /* Specific Modules */
@@ -155,8 +166,7 @@ p { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
 #modeToggle {
     background: none; border: none; cursor: pointer; font-size: 1.2rem;
     display: flex; align-items: center; justify-content: center;
-    padding: 8px; border-radius: 50%;
-    transition: background 0.2s;
+    padding: 8px; border-radius: 50%; transition: background 0.2s;
 }
 #modeToggle:hover { background: rgba(128,128,128,0.1); }
 .dark .icon-sun { display: inline; }
@@ -164,7 +174,7 @@ p { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
 body:not(.dark) .icon-sun { display: none; }
 body:not(.dark) .icon-moon { display: inline; }
 
-/* Footer - Better Logo Use */
+/* Footer */
 .footer {
     background: #0f172a; color: white; padding: 60px 20px;
     margin-top: 80px; border-top: 1px solid #1e293b;
@@ -173,7 +183,7 @@ body:not(.dark) .icon-moon { display: inline; }
     max-width: 1200px; margin: 0 auto;
     display: flex; flex-direction: column; align-items: center; text-align: center;
 }
-.footer-logo { height: 40px; margin-bottom: 20px; opacity: 0.8; }
+.footer-logo { height: 50px; margin-bottom: 20px; opacity: 1; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
 .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 30px; }
 .social-links a { color: #94a3b8; text-decoration: none; font-weight: 500; transition: color 0.2s; }
 .social-links a:hover { color: white; }
@@ -184,5 +194,6 @@ body:not(.dark) .icon-moon { display: inline; }
     .mobile-menu-btn { display: block; }
     .hero h1 { font-size: 2.5rem; }
     .hero p { font-size: 1.1rem; }
+    .hero::before { width: 300px; height: 300px; } /* Smaller watermark on mobile */
     .grid-2 { grid-template-columns: 1fr; }
 }
