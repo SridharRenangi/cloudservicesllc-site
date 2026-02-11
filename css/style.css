@@ -6,7 +6,7 @@
     --text-secondary: #4b5563;
     --accent-color: #2563eb; 
     --accent-hover: #1d4ed8;
-    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --navbar-bg: rgba(255, 255, 255, 0.98);
     --navbar-text: #111827;
     --border-color: #e5e7eb;
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -21,7 +21,7 @@
     --text-secondary: #d1d5db; 
     --accent-color: #60a5fa; 
     --accent-hover: #93c5fd;
-    --navbar-bg: rgba(15, 23, 42, 0.95);
+    --navbar-bg: rgba(15, 23, 42, 0.98);
     --navbar-text: #f3f4f6;
     --border-color: #334155;
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
@@ -36,7 +36,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     transition: background 0.3s ease, color 0.3s ease;
-    overflow-x: hidden; /* Prevent horizontal scroll from watermark */
+    overflow-x: hidden;
 }
 
 /* Layout */
@@ -44,7 +44,7 @@ body {
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-/* Navbar - Stronger Branding */
+/* Navbar - High Visibility Logo */
 .navbar {
     position: fixed; top: 0; width: 100%;
     background: var(--navbar-bg);
@@ -53,18 +53,19 @@ body {
     z-index: 1000;
 }
 .nav-container {
-    max-width: 1200px; margin: 0 auto; padding: 10px 25px; /* Tighter padding */
+    max-width: 1200px; margin: 0 auto; padding: 10px 25px;
     display: flex; justify-content: space-between; align-items: center;
 }
 .logo-link { display: flex; align-items: center; text-decoration: none; color: var(--navbar-text); }
 .logo { 
-    height: 55px; /* Larger */
+    height: 60px; /* Larger */
     width: auto;
     margin-right: 15px; 
-    transition: transform 0.2s, filter 0.2s;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: transform 0.2s;
+    /* This white drop-shadow ensures the blue logo is visible even on dark backgrounds */
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.8));
 }
-.logo-link:hover .logo { transform: scale(1.05); filter: drop-shadow(0 4px 6px rgba(37, 99, 235, 0.3)); }
+.logo-link:hover .logo { transform: scale(1.05); }
 .logo-text { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; }
 
 .nav-links { display: flex; align-items: center; gap: 30px; }
@@ -92,26 +93,29 @@ body {
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.2); }
 
-/* Hero Section with LOGO WATERMARK */
+/* Hero Section with HIGH QUALITY WATERMARK */
 .hero {
     background: var(--hero-gradient); color: white;
     padding: 200px 20px 140px; text-align: center;
     position: relative;
     overflow: hidden;
 }
-/* The Watermark Logic */
 .hero::before {
     content: '';
     position: absolute;
-    top: 50%; left: 50%;
+    top: 55%; left: 50%; /* Positioned slightly lower to sit behind text */
     transform: translate(-50%, -50%);
-    width: 600px; height: 600px;
-    background-image: url('../assets/logo.png'); /* References your logo */
+    width: 700px; height: 700px; /* Large Size */
+    
+    /* Using the new SVG ensures it is crisp */
+    background-image: url('../assets/logo.svg'); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    opacity: 0.08; /* Subtle transparency */
-    filter: grayscale(100%) invert(100%); /* Makes it white/ghostly */
+    
+    /* Adjusted opacity for "Shadow" effect */
+    opacity: 0.12; 
+    filter: grayscale(100%) brightness(200%); /* Makes it a white 'ghost' image */
     pointer-events: none;
     z-index: 1;
 }
@@ -125,7 +129,7 @@ body {
 }
 .hero-btns { display: flex; gap: 20px; justify-content: center; }
 
-/* Cards */
+/* Cards & Other CSS remains standard */
 .card {
     background: var(--card-bg); padding: 35px; border-radius: 16px;
     box-shadow: var(--shadow); border: 1px solid var(--border-color);
@@ -135,8 +139,6 @@ body {
 h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--text-primary); font-weight: 700; }
 h3 { margin-bottom: 10px; color: var(--text-primary); font-size: 1.4rem; }
 p { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
-
-/* Contact Grid */
 .contact-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px; margin-top: 40px;
@@ -150,19 +152,14 @@ p { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
 .contact-label { display: block; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 5px; font-weight: 600; }
 .contact-link { font-size: 1.1rem; color: var(--accent-color); text-decoration: none; font-weight: 600; word-break: break-all; }
 .contact-link:hover { text-decoration: underline; }
-
-/* Specific Modules */
 .project-tag {
     display: inline-block; background: rgba(37, 99, 235, 0.1); color: var(--accent-color);
     font-size: 0.75rem; padding: 6px 12px; border-radius: 20px; margin-bottom: 15px;
     font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
 }
 .dark .project-tag { background: rgba(96, 165, 250, 0.15); }
-
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
 .skill-category h4 { color: var(--accent-color); margin-bottom: 15px; font-size: 1.2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
-
-/* Toggle Button */
 #modeToggle {
     background: none; border: none; cursor: pointer; font-size: 1.2rem;
     display: flex; align-items: center; justify-content: center;
@@ -173,8 +170,6 @@ p { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
 .dark .icon-moon { display: none; }
 body:not(.dark) .icon-sun { display: none; }
 body:not(.dark) .icon-moon { display: inline; }
-
-/* Footer */
 .footer {
     background: #0f172a; color: white; padding: 60px 20px;
     margin-top: 80px; border-top: 1px solid #1e293b;
@@ -187,13 +182,11 @@ body:not(.dark) .icon-moon { display: inline; }
 .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 30px; }
 .social-links a { color: #94a3b8; text-decoration: none; font-weight: 500; transition: color 0.2s; }
 .social-links a:hover { color: white; }
-
-/* Responsive */
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .mobile-menu-btn { display: block; }
     .hero h1 { font-size: 2.5rem; }
     .hero p { font-size: 1.1rem; }
-    .hero::before { width: 300px; height: 300px; } /* Smaller watermark on mobile */
+    .hero::before { width: 350px; height: 350px; opacity: 0.1; }
     .grid-2 { grid-template-columns: 1fr; }
 }
