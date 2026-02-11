@@ -1,66 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cloud Services LLC</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="assets/favicon.png">
-<script src="js/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Services LLC | AWS & DevOps Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
+
 <header class="navbar">
-    <div class="nav-left">
-        <img src="assets/logo.png" class="logo">
-        <span class="logo-text">Cloud Services LLC</span>
+    <div class="nav-container">
+        <a href="index.html" class="logo-link">
+            <img src="assets/logo.png" class="logo" alt="Cloud Services LLC Logo">
+            <span class="logo-text">Cloud Services LLC</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#skills">Tech Stack</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="btn-primary">Contact</a>
+            <button id="modeToggle" aria-label="Toggle Dark Mode">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+        </nav>
+        <button class="mobile-menu-btn">☰</button>
     </div>
-    <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#skills">Skills</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-        <button id="modeToggle">🌙</button>
-    </nav>
 </header>
 
 <section class="hero">
-    <h1>Cloud Services LLC</h1>
-    <p>Modern Cloud, DevOps, and Automation Solutions built for scale and security.</p>
+    <div class="hero-content">
+        <h1>Scalable Cloud Architectures & <br> Mission-Critical Validation</h1>
+        <p>Specializing in AWS Serverless Development, DevOps Automation, and Safety-Critical Software Verification (DO-178B/C).</p>
+        <div class="hero-btns">
+            <a href="projects.html" class="btn-primary">View Portfolio</a>
+            <a href="#services" class="btn-secondary">Explore Services</a>
+        </div>
+    </div>
 </section>
 
 <section id="about" class="section">
-    <h2>About</h2>
-    <div class="card">
-        <p>I help businesses design and automate cloud-native systems using AWS, DevOps tooling, 
-        and scalable infrastructure patterns. I build secure and cost-efficient systems that 
-        operate reliably in production environments.</p>
+    <div class="section-header">
+        <h2>About The Architect</h2>
+    </div>
+    <div class="card about-card">
+        <p>
+            Welcome to <strong>Cloud Services LLC</strong>. I am <strong>Sridhar Renangi</strong>, an IT professional with over 5 years of experience bridging the gap between agile cloud development and rigorous aerospace standards.
+        </p>
+        <p>
+            Based in Hillsboro, OR, I help organizations design secure, cost-efficient cloud-native systems using <strong>AWS</strong> and <strong>Terraform</strong>. My background includes Hardware-Software Integration (HSI) for Rolls-Royce avionics systems, ensuring that the infrastructure I build is not only scalable but engineering-grade reliable.
+        </p>
     </div>
 </section>
 
 <section id="services" class="section">
-    <h2>Services</h2>
-    <div class="card">Cloud Engineering: AWS architecture, VPC design, serverless systems.</div>
-    <div class="card">DevOps Automation: CI/CD pipelines, Terraform, Kubernetes, Docker.</div>
-    <div class="card">Serverless Development: Lambda, API Gateway, Step Functions.</div>
-    <div class="card">Security Engineering: IAM, Secrets Manager, audit logging.</div>
-    <div class="card">Data Engineering: RDS tuning, ingestion pipelines.</div>
-    <div class="card">Technical Consulting: Architecture review, modernization, optimization.</div>
+    <div class="section-header">
+        <h2>Professional Services</h2>
+    </div>
+    <div class="grid-3">
+        <div class="card service-card">
+            <h3>☁️ Cloud Engineering</h3>
+            <p>End-to-end serverless architectures using AWS Lambda, API Gateway, and Step Functions. designing modular VPCs that mirror complex production environments.</p>
+        </div>
+        <div class="card service-card">
+            <h3>🚀 DevOps & IaC</h3>
+            <p>Infrastructure as Code provisioning with Terraform and CloudFormation. Building CI/CD pipelines (Jenkins, AWS CodePipeline) to accelerate release cycles.</p>
+        </div>
+        <div class="card service-card">
+            <h3>🛡️ Security & Compliance</h3>
+            <p>Implementation of IAM least-privilege policies, Secrets Manager, and audit logging via CloudTrail to meet enterprise data privacy standards.</p>
+        </div>
+        <div class="card service-card">
+            <h3>✈️ Critical Systems Testing</h3>
+            <p>Specialized verification for safety-critical software (DO-178B/C), including MC/DC analysis, Hardware-Software Integration (HSI), and fault injection testing.</p>
+        </div>
+        <div class="card service-card">
+            <h3>📊 Data Pipelines</h3>
+            <p>High-throughput telemetry ingestion using DynamoDB and Python (Boto3). Schema migration and RDS query optimization for sub-millisecond latency.</p>
+        </div>
+        <div class="card service-card">
+            <h3>🔍 Observability</h3>
+            <p>Full-stack monitoring setups using CloudWatch, Grafana, and ELK Stack to detect errors in real-time and reduce incident response times.</p>
+        </div>
+    </div>
 </section>
 
-<section id="skills" class="section">
-    <h2>Technical Skills</h2>
-    <div class="card">
-        <p><strong>Cloud:</strong> AWS (EC2, Lambda, S3, RDS, API Gateway, IAM, Step Functions)</p>
-        <p><strong>DevOps:</strong> Terraform, CloudFormation, Jenkins, Docker, Kubernetes</p>
-        <p><strong>Languages:</strong> Python (Boto3), Bash, SQL, C/C++</p>
-        <p><strong>Testing:</strong> HSI Testing, DO-178B/C, MC/DC</p>
-        <p><strong>Tools:</strong> CloudWatch, CloudTrail, Grafana, JIRA</p>
+<section id="skills" class="section alt-bg">
+    <div class="section-header">
+        <h2>Technical Stack</h2>
+    </div>
+    <div class="skills-grid">
+        <div class="skill-category">
+            <h4>Cloud & Infrastructure</h4>
+            <p>AWS (EC2, Lambda, S3, RDS, API Gateway, IAM, Step Functions), VPC Networking, Route 53.</p>
+        </div>
+        <div class="skill-category">
+            <h4>DevOps & Tools</h4>
+            <p>Terraform, CloudFormation, Docker, Kubernetes (EKS), Jenkins, Git, JIRA.</p>
+        </div>
+        <div class="skill-category">
+            <h4>Languages</h4>
+            <p>Python (Boto3, PyTest), Bash, SQL, C/C++, ADA.</p>
+        </div>
+        <div class="skill-category">
+            <h4>Validation & Testing</h4>
+            <p>HSI Testing, DO-178B/C, MC/DC, MATLAB/Simulink, Postman.</p>
+        </div>
     </div>
 </section>
 
 <footer class="footer">
-    <p>© 2026 Cloud Services LLC • Hillsboro, Oregon</p>
+    <div class="footer-content">
+        <p>© 2026 Cloud Services LLC • Hillsboro, Oregon</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/renangisridhar/" target="_blank">LinkedIn</a>
+            <a href="mailto:info@cloudservicesllc.org">Email</a>
+        </div>
+    </div>
 </footer>
 
 </body>

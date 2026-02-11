@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects - Cloud Services LLC</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="assets/favicon.png">
-<script src="js/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Cloud Services LLC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 
 <header class="navbar">
-    <div class="nav-left">
-        <img src="assets/logo.png" class="logo">
-        <span class="logo-text">Cloud Services LLC</span>
+    <div class="nav-container">
+        <a href="index.html" class="logo-link">
+            <img src="assets/logo.png" class="logo" alt="Cloud Services LLC Logo">
+            <span class="logo-text">Cloud Services LLC</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="contact.html" class="btn-primary">Contact</a>
+            <button id="modeToggle">
+                <span class="icon-sun">☀️</span>
+                <span class="icon-moon">🌙</span>
+            </button>
+        </nav>
     </div>
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="contact.html">Contact</a>
-        <button id="modeToggle">🌙</button>
-    </nav>
 </header>
 
+<section class="section page-header">
+    <h1>Project Portfolio</h1>
+    <p>A selection of work in Cloud Architecture, Automation, and Avionics.</p>
+</section>
+
 <section class="section">
-    <h2>Projects</h2>
+    <div class="grid-2">
+        <div class="card project-card">
+            <div class="project-tag">Cloud Infrastructure</div>
+            <h3>End-to-End Terraform Provisioning</h3>
+            <p><strong>Role:</strong> Software Developer @ Keypixel IT Solutions</p>
+            <p>Orchestrated modular VPC architectures using Terraform and AWS CloudFormation. Achieved 100% configuration parity between development and production environments, mirroring complex hardware testing labs.</p>
+        </div>
 
-    <div class="card">
-        <h3>Solar-Powered Automation & Embedded Systems</h3>
-        <p>Designed a robust embedded control system with power-aware logic and fault-tolerant 
-        automation. Achieved 99.9% operational stability through fault injection testing.</p>
+        <div class="card project-card">
+            <div class="project-tag">Serverless Data</div>
+            <h3>Real-Time Telemetry Pipeline</h3>
+            <p><strong>Role:</strong> Software Developer @ Keypixel IT Solutions</p>
+            <p>Engineered a high-throughput data ingestion pipeline using AWS Lambda and DynamoDB. Utilized Boto3 for automated data validation, reducing manual analysis time by 40%.</p>
+        </div>
+
+        <div class="card project-card">
+            <div class="project-tag">Aerospace / Avionics</div>
+            <h3>Rolls-Royce Trent Engine Validation</h3>
+            <p><strong>Role:</strong> System Engineer @ TCS</p>
+            <p>Performed Hardware-Software Integration (HSI) testing for the Trent XWB engine. Validated control system behavior in simulated aerospace environments (temperature/altitude profiles) ensuring compliance with DO-178B standards.</p>
+        </div>
+
+        <div class="card project-card">
+            <div class="project-tag">Security</div>
+            <h3>Zero-Trust Cloud Security Implementation</h3>
+            <p><strong>Role:</strong> AWS Developer @ Arizona State University</p>
+            <p>Implemented VPC PrivateLink and strict IAM Permission Boundaries to secure sensitive engineering IP. Automated credential rotation using AWS Secrets Manager, achieving a 15% increase in security compliance.</p>
+        </div>
     </div>
-
-    <div class="card">
-        <h3>Yield Data Analytics & Business Intelligence</h3>
-        <p>Built an analytics pipeline using SQL and Tableau to uncover revenue insights from 
-        a 48k-record dataset, enabling better strategic planning.</p>
-    </div>
-
-    <div class="card">
-        <h3>High-Throughput Serverless Pipeline</h3>
-        <p>Engineered a telemetry ingestion pipeline using AWS Lambda and DynamoDB, cutting 
-        manual analysis time by 40%.</p>
-    </div>
-
 </section>
 
 <footer class="footer">
