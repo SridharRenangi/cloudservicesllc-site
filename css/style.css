@@ -44,7 +44,7 @@ body {
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-/* Navbar - Horizontal Layout Fix */
+/* Navbar */
 .navbar {
     position: fixed; top: 0; width: 100%;
     background: var(--navbar-bg);
@@ -56,59 +56,20 @@ body {
     max-width: 1200px; margin: 0 auto; padding: 10px 25px;
     display: flex; justify-content: space-between; align-items: center;
 }
-/* Flex container for Icon + Text */
+
+/* Logo Image Styling */
 .logo-link { 
     display: flex; 
     align-items: center; 
-    gap: 12px; /* Space between logo and text */
     text-decoration: none; 
-    color: var(--navbar-text); 
 }
-
-/* The SVG Icon Only */
-.logo-svg { 
-    height: 45px; 
+.logo { 
+    height: 65px; /* Sized for readability */
     width: auto;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
     transition: transform 0.2s;
-}
-.logo-link:hover .logo-svg { transform: scale(1.05); }
-
-/* The HTML Text Stack */
-.logo-text-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1.1;
-}
-.logo-title {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 1.25rem;
-    letter-spacing: 0.5px;
-    color: var(--navbar-text);
-    text-transform: uppercase;
-}
-.logo-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-/* The decorative lines beside LLC */
-.logo-subtitle::before, .logo-subtitle::after {
-    content: "";
     display: block;
-    height: 2px;
-    width: 20px;
-    background-color: var(--accent-color);
-    opacity: 0.7;
 }
+.logo-link:hover .logo { transform: scale(1.02); }
 
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links a {
@@ -135,7 +96,7 @@ body {
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.2); }
 
-/* Hero Section with Watermark */
+/* Hero Section with PNG Watermark */
 .hero {
     background: var(--hero-gradient); color: white;
     padding: 200px 20px 140px; text-align: center;
@@ -148,12 +109,14 @@ body {
     top: 55%; left: 50%;
     transform: translate(-50%, -50%);
     width: 600px; height: 300px;
-    /* Clean Watermark of just the Cloud */
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 65'%3e%3cpath fill='%23ffffff' d='M80,25 C80,10 65,0 50,0 C38,0 28,6 24,15 C20,13 16,12 12,12 C5,12 0,17 0,25 C0,26 0,27 1,28 L85,28 C83,26 80,25 80,25 Z'/%3e%3cpath fill='%23ffffff' d='M25,45 L60,20 L55,32 L85,15 L65,15 L75,5 Z'/%3e%3c/svg%3e");
+    
+    /* Using your PNG file */
+    background-image: url('../assets/logo.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    opacity: 0.1; 
+    
+    opacity: 0.1; /* Subtle ghost effect */
     pointer-events: none;
     z-index: 1;
 }
@@ -198,6 +161,15 @@ body:not(.dark) .icon-moon { display: inline; }
 
 .footer { background: #0f172a; color: white; padding: 60px 20px; margin-top: 80px; border-top: 1px solid #1e293b; }
 .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+/* FOOTER LOGO FILTER: Makes your logo pure white in the footer */
+.footer-logo { 
+    height: 60px; 
+    margin-bottom: 20px; 
+    filter: brightness(0) invert(1); /* Turns any image white */
+    opacity: 0.9;
+}
+
 .social-links { margin-top: 25px; display: flex; justify-content: center; gap: 30px; }
 .social-links a { color: #94a3b8; text-decoration: none; font-weight: 500; transition: color 0.2s; }
 .social-links a:hover { color: white; }
