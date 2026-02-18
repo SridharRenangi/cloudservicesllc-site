@@ -2,30 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Post | CloudServicesLLC</title>
+    <title>Finding | CloudServicesLLC</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; }
-        img { max-width: 100%; }
-        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; }
+        body { font-family: -apple-system, sans-serif; line-height: 1.7; max-width: 750px; margin: 60px auto; padding: 20px; color: #1f2937; }
+        .back-link { text-decoration: none; color: #2563eb; font-weight: 600; margin-bottom: 40px; display: block; }
+        #content h1 { font-size: 2.2rem; color: #111; margin-bottom: 10px; }
+        #content p { margin-bottom: 20px; font-size: 1.1rem; }
+        #content a { color: #2563eb; }
+        hr { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
     </style>
 </head>
 <body>
-    <a href="blog.html">← Back to Blog</a>
-    <div id="content">Loading finding...</div>
+    <a href="blog.html" class="back-link">← Back to all findings</a>
+    <article id="content">Loading finding from cloud storage...</article>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const fileName = urlParams.get('file');
 
         async function loadPost() {
-            const response = await fetch(`blog/${fileName}`);
-            const text = await response.json(); // GitHub API returns base64
-            const markdown = atob(text.content); // Decode it
-            
-            // Remove the metadata (--- section) before rendering
-            const cleanMarkdown = markdown.replace(/^---[\s\S]*?---/, '');
-            document.getElementById('content').innerHTML = marked.parse(cleanMarkdown);
+            try {
+                // DIRECT LINK to the raw file to bypass API decoding issues
+                const rawUrl = `https://raw.githubusercontent.com/SridharRenangi/cloudservicesllc-site/main/blog/${fileName}`;
+                const response = await fetch(rawUrl);
+                if (!response.ok) throw new Error('File not found');
+                
+                const markdown = await response.text();
+                // Strip out the metadata (--- section)
+                const cleanMarkdown = markdown.replace(/^---[\s\S]*?---/, '');
+                
+                document.getElementById('content').innerHTML = marked.parse(cleanMarkdown);
+                document.title = fileName.substring(11).replace(/-/g, ' ') + " | CloudServicesLLC";
+            } catch (err) {
+                document.getElementById('content').innerHTML = "Finding could not be loaded. Please check the URL.";
+            }
         }
         loadPost();
     </script>
