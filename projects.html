@@ -9,7 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="js/main.js" defer></script>
 </head>
-<body>
+<body class="dark">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme') || 'dark';
+            if (saved === 'light') {
+                document.body.classList.remove('dark');
+            } else {
+                document.body.classList.add('dark');
+            }
+        })();
+    </script>
 
 <header class="navbar">
     <div class="nav-container">
@@ -22,12 +32,15 @@
         </a>
 
         <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="contact.html" class="btn-primary">Contact</a>
-            <button id="modeToggle">
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="projects.html" style="color: var(--accent-color);">Projects</a>
+            <a href="blog.html">Blog / Findings</a>
+            <button id="modeToggle" aria-label="Toggle Dark Mode">
                 <span class="icon-sun">☀️</span>
                 <span class="icon-moon">🌙</span>
             </button>
+            <a href="contact.html" class="btn-primary">Contact</a>
         </nav>
     </div>
 </header>
@@ -57,7 +70,7 @@
             <div class="project-tag">Aerospace / Avionics</div>
             <h3>Rolls-Royce Trent Engine Validation</h3>
             <p><strong>Role:</strong> System Engineer @ TCS</p>
-            <p>Performed Hardware-Software Integration (HSI) testing for the Trent XWB engine. Validated control system behavior in simulated aerospace environments (temperature/altitude profiles) ensuring compliance with DO-178B standards.</p>
+            <p>Performed Hardware-Software Integration (HSI) testing for the Trent XWB engine. Validated control system behavior in simulated aerospace environments ensuring compliance with DO-178B standards.</p>
         </div>
         <div class="card project-card">
             <div class="project-tag">Automation & Databases</div>
@@ -72,6 +85,10 @@
     <div class="footer-content">
         <img src="assets/logo.png" class="footer-logo" alt="Cloud Services LLC">
         <p>© 2026 Cloud Services LLC • Hillsboro, Oregon</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/renangisridhar/" target="_blank">LinkedIn</a>
+            <a href="mailto:info@cloudservicesllc.org">Email</a>
+        </div>
     </div>
 </footer>
 

@@ -22,32 +22,42 @@
     </style>
 </head>
 <body class="dark">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme') || 'dark';
+            if (saved === 'light') {
+                document.body.classList.remove('dark');
+            } else {
+                document.body.classList.add('dark');
+            }
+        })();
+    </script>
 
     <nav class="navbar">
-    <div class="nav-container">
-        <a href="index.html" class="logo-link">
-            <img src="assets/logo.png" alt="Logo" class="logo-img">
-            <div class="logo-text-stack">
-                <span class="logo-title">Cloud Services</span>
-                <span class="logo-subtitle">LLC</span>
-            </div>
-        </a>
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.png" alt="Logo" class="logo-img">
+                <div class="logo-text-stack">
+                    <span class="logo-title">Cloud Services</span>
+                    <span class="logo-subtitle">LLC</span>
+                </div>
+            </a>
 
-        <div class="nav-links">
-            <a href="index.html#about">About</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#tech-stack">Tech Stack</a>
-            <a href="index.html#projects">Projects</a>
-            <a href="blog.html" style="color: var(--accent-color);">Blog / Findings</a>
-            
-            <button id="modeToggle">
-                <span class="icon-sun">☀️</span>
-                <span class="icon-moon">🌙</span>
-            </button>
-            
-            <a href="index.html#contact" class="btn-primary">Contact</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#tech-stack">Tech Stack</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="blog.html" style="color: var(--accent-color);">Blog / Findings</a>
+                
+                <button id="modeToggle">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+                
+                <a href="index.html#contact" class="btn-primary">Contact</a>
+            </div>
         </div>
-    </div>
     </nav>
 
     <main class="section" style="margin-top: var(--header-height);">
@@ -70,7 +80,9 @@
 
         async function loadPost() {
             try {
-                const rawUrl = `https://raw.githubusercontent.com/SridharRenangi/cloudservicesllc-site/main/blog/${fileName}`;
+                // Ensure this matches your actual GitHub repository name
+                const repo = "SridharRenangi/cloudservicesllc-site"; 
+                const rawUrl = `https://raw.githubusercontent.com/${repo}/main/blog/${fileName}`;
                 const response = await fetch(rawUrl);
                 const markdown = await response.text();
                 const cleanMarkdown = markdown.replace(/^---[\s\S]*?---/, '');
