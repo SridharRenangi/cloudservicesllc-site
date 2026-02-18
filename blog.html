@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Findings | CloudServicesLLC</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+        .post-card { border-bottom: 1px solid #eee; padding: 20px 0; }
+        .post-card a { text-decoration: none; color: #007bff; font-size: 1.2rem; font-weight: bold; }
+        .post-date { color: #888; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <h1>Cloud & DevOps Findings</h1>
+    <div id="blog-list">Loading latest findings...</div>
+
+    <script>
+        // This script tells the page to look at your GitHub repo's blog folder
+        async function fetchPosts() {
+            const repo = "SridharRenangi/cloudservicesllc-site"; // Double check your repo name here
+            const response = await fetch(`https://api.github.com/repos/${repo}/contents/blog`);
+            const files = await response.json();
+            
+            const listDiv = document.getElementById('blog-list');
+            listDiv.innerHTML = ''; // Clear loading text
+
+            // Sort files by date (newest first)
+            files.reverse().forEach(file => {
+                if(file.name.endsWith('.md')) {
+                    const postName = file.name.replace('.md', '').replace(/-/g, ' ');
+                    const date = file.name.substring(0, 10);
+                    
+                    const postHtml = `
+                        <div class="post-card">
+                            <div class="post-date">${date}</div>
+                            <a href="post.html?file=${file.name}">${postName.substring(11)}</a>
+                        </div>
+                    `;
+                    listDiv.innerHTML += postHtml;
+                }
+            });
+        }
+        fetchPosts();
+    </script>
+</body>
+</html>

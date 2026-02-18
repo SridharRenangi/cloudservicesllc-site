@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post | CloudServicesLLC</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; }
+        img { max-width: 100%; }
+        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <a href="blog.html">← Back to Blog</a>
+    <div id="content">Loading finding...</div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileName = urlParams.get('file');
+
+        async function loadPost() {
+            const response = await fetch(`blog/${fileName}`);
+            const text = await response.json(); // GitHub API returns base64
+            const markdown = atob(text.content); // Decode it
+            
+            // Remove the metadata (--- section) before rendering
+            const cleanMarkdown = markdown.replace(/^---[\s\S]*?---/, '');
+            document.getElementById('content').innerHTML = marked.parse(cleanMarkdown);
+        }
+        loadPost();
+    </script>
+</body>
+</html>
