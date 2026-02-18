@@ -1,26 +1,36 @@
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="index.html" class="logo-link">
-            <img src="assets/logo.png" alt="Logo" class="logo-img">
-            <div class="logo-text-stack">
-                <span class="logo-title">Cloud Services</span>
-                <span class="logo-subtitle">LLC</span>
-            </div>
-        </a>
+// This function handles the actual visual change
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
+    }
+}
 
-        <div class="nav-links">
-            <a href="index.html#about">About</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#tech-stack">Tech Stack</a>
-            <a href="index.html#projects">Projects</a>
-            <a href="blog.html" style="color: var(--accent-color);">Blog / Findings</a>
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('modeToggle');
+    
+    // 1. Check storage for existing preference, default to 'dark'
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+
+    // 2. Setup the click listener if the button exists on this page
+    if (toggle) {
+        toggle.onclick = () => {
+            const isNowDark = document.body.classList.toggle('dark');
+            const newTheme = isNowDark ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
             
-            <button id="modeToggle">
-                <span class="icon-sun">☀️</span>
-                <span class="icon-moon">🌙</span>
-            </button>
-            
-            <a href="index.html#contact" class="btn-primary">Contact</a>
-        </div>
-    </div>
-</nav>
+            // Sync with other open tabs of your site
+            window.dispatchEvent(new Event('storage'));
+        };
+    }
+
+    // 3. Sync across tabs
+    window.addEventListener('storage', () => {
+        const syncTheme = localStorage.getItem('theme');
+        applyTheme(syncTheme);
+    });
+
+    console.log('Cloud Services LLC - Theme Engine Online');
+});
