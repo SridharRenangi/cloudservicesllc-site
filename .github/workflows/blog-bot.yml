@@ -1,0 +1,32 @@
+name: Auto Blog Update
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Runs every Monday at Midnight
+  workflow_dispatch:   # Adds a manual "Run" button in GitHub Actions
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - name: Install feedparser
+        run: pip install feedparser
+        
+      - name: Run Fetcher
+        run: python scripts/fetch_news.py
+        
+      - name: Commit & Push to GitHub
+        run: |
+          git config --global user.name "CloudServices-Bot"
+          git config --global user.email "bot@cloudservicesllc.org"
+          git add blog/
+          # This line prevents errors if there is nothing new to post
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Automation: Added latest findings" && git push)
