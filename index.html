@@ -11,6 +11,14 @@
 </head>
 <body>
 
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.remove('dark');
+        } else {
+            document.body.classList.add('dark');
+        }
+    </script>
+
 <header class="navbar">
     <div class="nav-container">
         <a href="index.html" class="logo-link">
