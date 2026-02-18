@@ -2,40 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Finding | CloudServicesLLC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding | Cloud Services LLC</title>
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        body { font-family: -apple-system, sans-serif; line-height: 1.7; max-width: 750px; margin: 60px auto; padding: 20px; color: #1f2937; }
-        .back-link { text-decoration: none; color: #2563eb; font-weight: 600; margin-bottom: 40px; display: block; }
-        #content h1 { font-size: 2.2rem; color: #111; margin-bottom: 10px; }
-        #content p { margin-bottom: 20px; font-size: 1.1rem; }
-        #content a { color: #2563eb; }
-        hr { border: 0; border-top: 1px solid #eee; margin: 40px 0; }
+        .post-layout { display: grid; grid-template-columns: 250px 1fr; gap: 40px; align-items: start; }
+        .toc-container { position: sticky; top: 120px; background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); }
+        .toc-title { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: var(--accent-color); margin-bottom: 15px; }
+        .toc-list { list-style: none; font-size: 0.9rem; }
+        .toc-list li { margin-bottom: 10px; }
+        .toc-list a { text-decoration: none; color: var(--text-secondary); transition: color 0.2s; }
+        .toc-list a:hover { color: var(--accent-color); }
+        
+        @media (max-width: 900px) {
+            .post-layout { grid-template-columns: 1fr; }
+            .toc-container { display: none; }
+        }
     </style>
 </head>
-<body>
-    <a href="blog.html" class="back-link">← Back to all findings</a>
-    <article id="content">Loading finding from cloud storage...</article>
+<body class="dark">
 
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.png" alt="Logo" class="logo-img">
+                <div class="logo-text-stack">
+                    <span class="logo-title">Cloud Services</span>
+                    <span class="logo-subtitle">LLC</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="blog.html">← Back to Blog</a>
+                <button id="modeToggle"><span class="icon-sun">☀️</span><span class="icon-moon">🌙</span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="section" style="margin-top: var(--header-height);">
+        <div class="post-layout">
+            <aside class="toc-container">
+                <div class="toc-title">On this page</div>
+                <ul id="toc" class="toc-list"></ul>
+            </aside>
+
+            <article id="content" class="card" style="line-height: 1.8;">
+                Loading report findings...
+            </article>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const fileName = urlParams.get('file');
 
         async function loadPost() {
             try {
-                // DIRECT LINK to the raw file to bypass API decoding issues
                 const rawUrl = `https://raw.githubusercontent.com/SridharRenangi/cloudservicesllc-site/main/blog/${fileName}`;
                 const response = await fetch(rawUrl);
-                if (!response.ok) throw new Error('File not found');
-                
                 const markdown = await response.text();
-                // Strip out the metadata (--- section)
                 const cleanMarkdown = markdown.replace(/^---[\s\S]*?---/, '');
                 
-                document.getElementById('content').innerHTML = marked.parse(cleanMarkdown);
-                document.title = fileName.substring(11).replace(/-/g, ' ') + " | CloudServicesLLC";
+                // Render Markdown
+                const contentDiv = document.getElementById('content');
+                contentDiv.innerHTML = marked.parse(cleanMarkdown);
+
+                // Generate Table of Contents
+                const tocList = document.getElementById('toc');
+                const headings = contentDiv.querySelectorAll('h1, h2, h3');
+                
+                headings.forEach((heading, index) => {
+                    const id = `heading-${index}`;
+                    heading.setAttribute('id', id);
+                    
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="#${id}">${heading.innerText}</a>`;
+                    // Indent H3s slightly for hierarchy
+                    if (heading.tagName === 'H3') li.style.paddingLeft = '15px';
+                    tocList.appendChild(li);
+                });
+
             } catch (err) {
-                document.getElementById('content').innerHTML = "Finding could not be loaded. Please check the URL.";
+                document.getElementById('content').innerHTML = "Unable to load the requested report.";
             }
         }
         loadPost();
