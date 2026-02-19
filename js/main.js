@@ -1,4 +1,4 @@
-// This function handles the actual visual change
+// Function to apply the theme visuals
 function applyTheme(theme) {
     if (theme === 'dark') {
         document.body.classList.add('dark');
@@ -8,29 +8,42 @@ function applyTheme(theme) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Theme Logic ---
     const toggle = document.getElementById('modeToggle');
-    
-    // 1. Check storage for existing preference, default to 'dark'
     const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
 
-    // 2. Setup the click listener if the button exists on this page
     if (toggle) {
         toggle.onclick = () => {
             const isNowDark = document.body.classList.toggle('dark');
-            const newTheme = isNowDark ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme);
-            
-            // Sync with other open tabs of your site
+            localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
             window.dispatchEvent(new Event('storage'));
         };
     }
 
-    // 3. Sync across tabs
-    window.addEventListener('storage', () => {
-        const syncTheme = localStorage.getItem('theme');
-        applyTheme(syncTheme);
-    });
+    // --- Mobile Menu Logic ---
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
 
-    console.log('Cloud Services LLC - Theme Engine Online');
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            // Toggle the visibility of the menu
+            navLinks.classList.toggle('active');
+            
+            // Optional: Change the icon from ☰ to ✕ when open
+            menuBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu when a link is clicked (useful for anchor tags)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '☰';
+            });
+        });
+    }
+
+    window.addEventListener('storage', () => {
+        applyTheme(localStorage.getItem('theme'));
+    });
 });

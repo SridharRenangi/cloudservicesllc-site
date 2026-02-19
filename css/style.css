@@ -244,3 +244,36 @@ body:not(.dark) .icon-moon { display: inline; }
     .hero::before { width: 350px; height: 350px; opacity: 0.1; }
     .grid-2 { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+    /* Hide the links by default on mobile */
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: var(--navbar-bg);
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px;
+        gap: 20px;
+        text-align: center;
+        backdrop-filter: blur(12px);
+    }
+
+    /* Show the links when the 'active' class is added via JS */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Ensure the hamburger button is visible */
+    .mobile-menu-btn {
+        display: block;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: var(--navbar-text);
+        cursor: pointer;
+    }
+}
