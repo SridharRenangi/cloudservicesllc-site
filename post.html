@@ -56,7 +56,8 @@
                 <span class="icon-moon">🌙</span>
             </button>
         </nav>
-        <button class="mobile-menu-btn">☰</button>
+        
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
     </div>
 </header>
 
@@ -74,26 +75,24 @@
     </main>
 
     <script src="js/main.js"></script>
+    
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const fileName = urlParams.get('file');
 
         async function loadPost() {
             try {
-                // Ensure this matches your actual GitHub repository name
                 const repo = "SridharRenangi/cloudservicesllc-site"; 
                 const rawUrl = `https://raw.githubusercontent.com/${repo}/main/blog/${fileName}`;
                 const response = await fetch(rawUrl);
                 const markdown = await response.text();
                 const cleanMarkdown = markdown.replace(/^---[\s\S]*?---/, '');
                 
-                // Render Markdown
                 const contentDiv = document.getElementById('content');
                 contentDiv.innerHTML = marked.parse(cleanMarkdown);
 
-                // Generate Table of Contents
                 const tocList = document.getElementById('toc');
-                const headings = contentDiv.querySelectorAll('h1, h2, h3');
+                const headings = contentDiv.querySelectorAll('h2, h3'); // H1 is usually page title
                 
                 headings.forEach((heading, index) => {
                     const id = `heading-${index}`;
@@ -101,7 +100,6 @@
                     
                     const li = document.createElement('li');
                     li.innerHTML = `<a href="#${id}">${heading.innerText}</a>`;
-                    // Indent H3s slightly for hierarchy
                     if (heading.tagName === 'H3') li.style.paddingLeft = '15px';
                     tocList.appendChild(li);
                 });

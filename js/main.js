@@ -1,4 +1,3 @@
-// Function to apply the theme visuals
 function applyTheme(theme) {
     if (theme === 'dark') {
         document.body.classList.add('dark');
@@ -7,7 +6,8 @@ function applyTheme(theme) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// Use a single function to initialize everything
+const initSite = () => {
     // --- Theme Logic ---
     const toggle = document.getElementById('modeToggle');
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -26,24 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     if (menuBtn && navLinks) {
-        menuBtn.addEventListener('click', () => {
-            // Toggle the visibility of the menu
-            navLinks.classList.toggle('active');
-            
-            // Optional: Change the icon from ☰ to ✕ when open
-            menuBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
-        });
+        // Remove any old listeners to prevent "double clicking"
+        menuBtn.replaceWith(menuBtn.cloneNode(true));
+        const newMenuBtn = document.querySelector('.mobile-menu-btn');
 
-        // Close menu when a link is clicked (useful for anchor tags)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuBtn.innerHTML = '☰';
-            });
+        newMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            navLinks.classList.toggle('active');
+            newMenuBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
         });
     }
+};
 
-    window.addEventListener('storage', () => {
-        applyTheme(localStorage.getItem('theme'));
-    });
+// Run on initial load
+document.addEventListener('DOMContentLoaded', initSite);
+
+// Sync across tabs
+window.addEventListener('storage', () => {
+    applyTheme(localStorage.getItem('theme'));
 });
