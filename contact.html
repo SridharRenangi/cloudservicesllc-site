@@ -23,8 +23,8 @@
             width: 100%;
             padding: 14px 18px;
             border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.12);
-            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.04);
             color: var(--text-primary);
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
@@ -35,6 +35,18 @@
 
         .contact-form input:focus,
         .contact-form textarea:focus {
+            border-color: rgba(59, 130, 246, 0.7);
+        }
+
+        /* Dark mode overrides */
+        body.dark .contact-form input,
+        body.dark .contact-form textarea {
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
+        }
+
+        body.dark .contact-form input:focus,
+        body.dark .contact-form textarea:focus {
             border-color: rgba(99, 179, 237, 0.6);
         }
 
@@ -120,7 +132,7 @@
         <div class="contact-item">
             <span class="contact-icon">📧</span>
             <span class="contact-label">Business Inquiries</span>
-            <a href="mailto:info@cloudservicesllc.org" class="contact-link">info@cloudservicesllc.org</a>
+            <a href="/cdn-cgi/l/email-protection#523b3c343d12313e3d2736213720243b3137213e3e317c3d2035" class="contact-link"><span class="__cf_email__" data-cfemail="a9c0c7cfc6e9cac5c6dccddaccdbdfc0caccdac5c5ca87c6dbce">[email&#160;protected]</span></a>
         </div>
         <div class="contact-item">
             <span class="contact-icon">💼</span>
@@ -138,14 +150,9 @@
     </div>
 
     <!-- Contact Form -->
-    <!-- 
-        ACTION: Replace "your_form_id" with your actual Formspree form ID.
-        Sign up free at https://formspree.io, create a form, and paste the ID here.
-        Example: https://formspree.io/f/xpwzgkla
-    -->
     <form
         class="contact-form"
-        action="https://formspree.io/f/your_form_id"
+        action="https://formspree.io/f/mlgwwbrn"
         method="POST"
     >
         <input type="text" name="name" placeholder="Your Name" required>
@@ -162,11 +169,4 @@
         <img src="assets/logo.png" class="footer-logo" alt="Cloud Services LLC">
         <p>© 2026 Cloud Services LLC • Built for Scale & Security</p>
         <div class="social-links">
-            <a href="https://linkedin.com/in/renangisridhar/" target="_blank">LinkedIn</a>
-            <a href="mailto:info@cloudservicesllc.org">Email</a>
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
+            <a href="https://linkedin.com/in/renangisridhar/"
