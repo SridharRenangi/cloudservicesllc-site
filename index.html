@@ -61,7 +61,7 @@
 
 <section id="about" class="section">
     <div class="section-header">
-        <h2>About The Architect</h2>
+        <h2>About Myself</h2>
     </div>
     <div class="card about-card">
         <p>
@@ -80,7 +80,7 @@
     <div class="grid-3">
         <div class="card service-card">
             <h3>☁️ Cloud Engineering</h3>
-            <p>End-to-end serverless architectures using AWS Lambda, API Gateway, and Step Functions. designing modular VPCs that mirror complex production environments.</p>
+            <p>End-to-end serverless architectures using AWS Lambda, API Gateway, and Step Functions. Designing modular VPCs that mirror complex production environments.</p>
         </div>
         <div class="card service-card">
             <h3>🚀 DevOps & IaC</h3>
@@ -135,7 +135,15 @@
         <p>© 2026 Cloud Services LLC • Hillsboro, Oregon</p>
         <div class="social-links">
             <a href="https://linkedin.com/in/renangisridhar/" target="_blank">LinkedIn</a>
-            <a href="mailto:info@cloudservicesllc.org">Email</a>
+            <a id="footer-email" href="#">Email</a>
+            <script>
+                (function() {
+                    const u = 'info';
+                    const d = 'cloudservicesllc.org';
+                    const el = document.getElementById('footer-email');
+                    el.href = 'mailto:' + u + '@' + d;
+                })();
+            </script>
         </div>
     </div>
 </footer>

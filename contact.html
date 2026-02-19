@@ -132,7 +132,16 @@
         <div class="contact-item">
             <span class="contact-icon">📧</span>
             <span class="contact-label">Business Inquiries</span>
-            <a href="/cdn-cgi/l/email-protection#523b3c343d12313e3d2736213720243b3137213e3e317c3d2035" class="contact-link"><span class="__cf_email__" data-cfemail="a9c0c7cfc6e9cac5c6dccddaccdbdfc0caccdac5c5ca87c6dbce">[email&#160;protected]</span></a>
+            <a id="biz-email" href="#" class="contact-link"></a>
+            <script>
+                (function() {
+                    const u = 'info';
+                    const d = 'cloudservicesllc.org';
+                    const el = document.getElementById('biz-email');
+                    el.href = 'mailto:' + u + '@' + d;
+                    el.textContent = u + '@' + d;
+                })();
+            </script>
         </div>
         <div class="contact-item">
             <span class="contact-icon">💼</span>
