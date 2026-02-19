@@ -4,11 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Cloud Services LLC</title>
-    <meta name="description" content="Get in touch with Cloud Services LLC for AWS, DevOps, or safety-critical software engineering inquiries.">
+    <meta name="description" content="Contact Cloud Services LLC for AWS consulting, DevOps implementation, or safety-critical engineering inquiries. Based in Hillsboro, OR — remote available.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/favicon.png" sizes="144x144" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="js/main.js" defer></script>
+    <style>
+        .contact-form {
+            max-width: 620px;
+            margin: 50px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.05);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.2s;
+            box-sizing: border-box;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: rgba(99, 179, 237, 0.6);
+        }
+
+        .contact-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 14px;
+            background: var(--accent, #3b82f6);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .contact-form button:hover {
+            opacity: 0.85;
+        }
+
+        .contact-grid {
+            justify-content: center;
+        }
+
+        /* Center the last item when it wraps alone */
+        .contact-grid .contact-item:last-child:nth-child(3n+1) {
+            grid-column: 1 / -1;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body class="dark">
     <script>
@@ -38,7 +99,7 @@
             <a href="index.html#tech-stack">Tech Stack</a>
             <a href="projects.html">Projects</a>
             <a href="blog.html">Blog / Findings</a>
-            <a href="contact.html" class="btn-primary">Contact</a> 
+            <a href="contact.html" class="btn-primary">Contact</a>
             <button id="modeToggle">
                 <span class="icon-sun">☀️</span>
                 <span class="icon-moon">🌙</span>
@@ -54,6 +115,7 @@
         <p style="font-size: 1.2rem;">Available for Cloud Consulting, Architecture Reviews, and Full-Scale DevOps Implementation.</p>
     </div>
 
+    <!-- Contact Info Cards -->
     <div class="contact-grid">
         <div class="contact-item">
             <span class="contact-icon">📧</span>
@@ -61,21 +123,38 @@
             <a href="mailto:info@cloudservicesllc.org" class="contact-link">info@cloudservicesllc.org</a>
         </div>
         <div class="contact-item">
-            <span class="contact-icon">👤</span>
-            <span class="contact-label">Direct Contact</span>
-            <a href="mailto:sridharkrrenangi@gmail.com" class="contact-link">sridharkrrenangi@gmail.com</a>
-        </div>
-        <div class="contact-item">
             <span class="contact-icon">💼</span>
             <span class="contact-label">Connect on LinkedIn</span>
-            <a href="https://linkedin.com/in/renangisridhar/" target="_blank" class="contact-link">/in/renangisridhar</a>
+            <a href="https://linkedin.com/in/renangisridhar/" target="_blank" class="contact-link">Sridhar Renangi</a>
         </div>
         <div class="contact-item">
             <span class="contact-icon">📍</span>
             <span class="contact-label">Location</span>
-            <span class="contact-link" style="color: var(--text-primary); cursor: default;">Hillsboro, Oregon<br><span style="font-size: 0.9rem; opacity: 0.7;">(Remote Available)</span></span>
+            <span class="contact-link" style="color: var(--text-primary); cursor: default;">
+                Hillsboro, Oregon<br>
+                <span style="font-size: 0.9rem; opacity: 0.7;">(Remote Available)</span>
+            </span>
         </div>
     </div>
+
+    <!-- Contact Form -->
+    <!-- 
+        ACTION: Replace "your_form_id" with your actual Formspree form ID.
+        Sign up free at https://formspree.io, create a form, and paste the ID here.
+        Example: https://formspree.io/f/xpwzgkla
+    -->
+    <form
+        class="contact-form"
+        action="https://formspree.io/f/your_form_id"
+        method="POST"
+    >
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject (e.g. AWS Architecture Review)">
+        <textarea name="message" placeholder="Tell me about your project or inquiry..." required></textarea>
+        <button type="submit">Send Message →</button>
+    </form>
+
 </section>
 
 <footer class="footer">
