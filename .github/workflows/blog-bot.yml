@@ -27,6 +27,6 @@ jobs:
         run: |
           git config --global user.name "CloudServices-Bot"
           git config --global user.email "bot@cloudservicesllc.org"
-          git add blog/
+          git add blog/ sitemap.xml
           # This line prevents errors if there is nothing new to post
           git diff --quiet && git diff --staged --quiet || (git commit -m "Automation: Added latest findings" && git push)
