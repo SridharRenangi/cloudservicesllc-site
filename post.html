@@ -308,6 +308,12 @@
                 ${marked.parse(body)}
             `;
 
+            // ── Make all links open in a new tab ──
+            contentDiv.querySelectorAll('a').forEach(link => {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
+
             // ── Build TOC from rendered headings ──
             tocList.innerHTML = '';
             const headings = contentDiv.querySelectorAll('h1, h2, h3');
