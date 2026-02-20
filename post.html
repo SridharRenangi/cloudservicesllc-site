@@ -6,16 +6,167 @@
     <title>Finding | Cloud Services LLC</title>
     <link rel="icon" href="assets/favicon.png" sizes="144x144" type="image/png">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        .post-layout { display: grid; grid-template-columns: 250px 1fr; gap: 40px; align-items: start; }
-        .toc-container { position: sticky; top: 120px; background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); }
-        .toc-title { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: var(--accent-color); margin-bottom: 15px; }
-        .toc-list { list-style: none; font-size: 0.9rem; }
-        .toc-list li { margin-bottom: 10px; }
-        .toc-list a { text-decoration: none; color: var(--text-secondary); transition: color 0.2s; }
-        .toc-list a:hover { color: var(--accent-color); }
-        
+        /* ── Layout ── */
+        .post-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 40px;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ── TOC sidebar ── */
+        .toc-container {
+            position: sticky;
+            top: 120px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .toc-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+            margin-bottom: 14px;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.875rem;
+        }
+        .toc-list li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .toc-list a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+            display: block;
+        }
+        .toc-list a:hover,
+        .toc-list a.active {
+            color: var(--accent-color);
+        }
+        .toc-list .toc-h3 {
+            padding-left: 14px;
+            font-size: 0.82rem;
+        }
+        .toc-empty {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            opacity: 0.6;
+            font-style: italic;
+        }
+
+        /* ── Article card ── */
+        #content {
+            line-height: 1.85;
+            font-size: 1rem;
+        }
+
+        /* ── Post title at top ── */
+        .post-title-bar {
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .post-title-bar h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin: 0 0 8px;
+            line-height: 1.3;
+        }
+        .post-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* ── Readable link colors inside post ── */
+        #content a {
+            color: #60a5fa;
+            text-decoration: underline;
+            text-decoration-color: rgba(96, 165, 250, 0.4);
+            text-underline-offset: 3px;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+        #content a:hover {
+            color: #93c5fd;
+            text-decoration-color: rgba(147, 197, 253, 0.7);
+        }
+        body:not(.dark) #content a {
+            color: #2563eb;
+            text-decoration-color: rgba(37, 99, 235, 0.35);
+        }
+        body:not(.dark) #content a:hover {
+            color: #1d4ed8;
+            text-decoration-color: rgba(29, 78, 216, 0.6);
+        }
+
+        /* ── Headings inside post ── */
+        #content h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 36px 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        #content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0 10px;
+        }
+        #content p { margin: 0 0 16px; }
+        #content ul, #content ol {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        #content li { margin-bottom: 6px; }
+        #content code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.88em;
+            background: rgba(99, 179, 237, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        #content pre {
+            background: rgba(0,0,0,0.3);
+            padding: 16px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-bottom: 16px;
+        }
+        #content pre code {
+            background: none;
+            padding: 0;
+        }
+        body:not(.dark) #content pre {
+            background: rgba(0,0,0,0.06);
+        }
+
+        /* ── Back link ── */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 24px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 1; }
+
         @media (max-width: 900px) {
             .post-layout { grid-template-columns: 1fr; }
             .toc-container { display: none; }
@@ -43,7 +194,6 @@
                 <span class="logo-subtitle">LLC</span>
             </div>
         </a>
-
         <nav class="nav-links">
             <a href="index.html#about">About</a>
             <a href="index.html#services">Services</a>
@@ -56,59 +206,144 @@
                 <span class="icon-moon">🌙</span>
             </button>
         </nav>
-        
         <button class="mobile-menu-btn" aria-label="Menu">☰</button>
     </div>
 </header>
 
-    <main class="section" style="margin-top: var(--header-height);">
-        <div class="post-layout">
-            <aside class="toc-container">
-                <div class="toc-title">On this page</div>
-                <ul id="toc" class="toc-list"></ul>
-            </aside>
+<main class="section" style="margin-top: var(--header-height);">
+    <a href="blog.html" class="back-link">← Back to Findings</a>
 
-            <article id="content" class="card" style="line-height: 1.8;">
-                Loading report findings...
-            </article>
-        </div>
-    </main>
+    <div class="post-layout">
+        <!-- TOC sidebar -->
+        <aside class="toc-container">
+            <div class="toc-title">On This Page</div>
+            <ul id="toc" class="toc-list">
+                <li><span class="toc-empty">Loading…</span></li>
+            </ul>
+        </aside>
 
-    <script src="js/main.js"></script>
-    
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const fileName = urlParams.get('file');
+        <!-- Post content -->
+        <article id="content" class="card">
+            <p>Loading report findings…</p>
+        </article>
+    </div>
+</main>
 
-        async function loadPost() {
+<script src="js/main.js"></script>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const fileName  = urlParams.get('file');
+
+    async function loadPost() {
+        const contentDiv = document.getElementById('content');
+        const tocList    = document.getElementById('toc');
+
+        if (!fileName) {
+            contentDiv.innerHTML = '<p>No post specified.</p>';
+            tocList.innerHTML = '';
+            return;
+        }
+
+        try {
+            const repo   = "SridharRenangi/cloudservicesllc-site";
+            const rawUrl = `https://raw.githubusercontent.com/${repo}/main/blog/${fileName}`;
+            const response = await fetch(rawUrl);
+            if (!response.ok) throw new Error('Not found');
+            const markdown = await response.text();
+
+            // ── Strip frontmatter and extract metadata ──
+            let title = '';
+            let date  = '';
+            const fmMatch = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+            let body = markdown;
+            if (fmMatch) {
+                const fm = fmMatch[1];
+                const titleMatch = fm.match(/^title:\s*(.+)/m);
+                const dateMatch  = fm.match(/^date:\s*(.+)/m);
+                if (titleMatch) title = titleMatch[1].trim().replace(/^['"]|['"]$/g, '');
+                if (dateMatch)  date  = dateMatch[1].trim();
+                body = markdown.slice(fmMatch[0].length).trim();
+            }
+
+            // Fallback title from filename
+            if (!title) {
+                title = fileName
+                    .replace('.md', '')
+                    .substring(11)
+                    .replace(/-/g, ' ')
+                    .replace(/\b\w/g, c => c.toUpperCase());
+            }
+            // Fallback date from filename
+            if (!date) date = fileName.substring(0, 10);
+
+            // Strip leading H1 from body to avoid duplicate title
+            body = body.replace(/^#\s+.+\r?\n?/, '').trim();
+
+            // Format date safely
+            let prettyDate = date;
             try {
-                const repo = "SridharRenangi/cloudservicesllc-site"; 
-                const rawUrl = `https://raw.githubusercontent.com/${repo}/main/blog/${fileName}`;
-                const response = await fetch(rawUrl);
-                const markdown = await response.text();
-                const cleanMarkdown = markdown.replace(/^---[\s\S]*?---/, '');
-                
-                const contentDiv = document.getElementById('content');
-                contentDiv.innerHTML = marked.parse(cleanMarkdown);
+                const parts = date.substring(0, 10).split('-');
+                const dateObj = new Date(
+                    parseInt(parts[0]),
+                    parseInt(parts[1]) - 1,
+                    parseInt(parts[2])
+                );
+                if (!isNaN(dateObj.getTime())) {
+                    prettyDate = dateObj.toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'long', day: 'numeric'
+                    });
+                }
+            } catch(e) { /* keep raw date string */ }
 
-                const tocList = document.getElementById('toc');
-                const headings = contentDiv.querySelectorAll('h2, h3'); // H1 is usually page title
-                
+            // Update page title
+            document.title = `${title} | Cloud Services LLC`;
+
+            // ── Render markdown ──
+            contentDiv.innerHTML = `
+                <div class="post-title-bar">
+                    <h1>${title}</h1>
+                    <span class="post-meta">${prettyDate}</span>
+                </div>
+                ${marked.parse(body)}
+            `;
+
+            // ── Build TOC from rendered headings ──
+            tocList.innerHTML = '';
+            const headings = contentDiv.querySelectorAll('h1, h2, h3');
+
+            if (headings.length === 0) {
+                tocList.innerHTML = '<li><span class="toc-empty">No sections found</span></li>';
+            } else {
                 headings.forEach((heading, index) => {
-                    const id = `heading-${index}`;
+                    const id = `section-${index}`;
                     heading.setAttribute('id', id);
-                    
+
                     const li = document.createElement('li');
+                    if (heading.tagName === 'H3') li.classList.add('toc-h3');
                     li.innerHTML = `<a href="#${id}">${heading.innerText}</a>`;
-                    if (heading.tagName === 'H3') li.style.paddingLeft = '15px';
                     tocList.appendChild(li);
                 });
-
-            } catch (err) {
-                document.getElementById('content').innerHTML = "Unable to load the requested report.";
             }
+
+            // ── Highlight active TOC item on scroll ──
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute('id');
+                    const link = tocList.querySelector(`a[href="#${id}"]`);
+                    if (link) link.classList.toggle('active', entry.isIntersecting);
+                });
+            }, { rootMargin: '-20% 0px -70% 0px' });
+
+            headings.forEach(h => observer.observe(h));
+
+        } catch (err) {
+            document.getElementById('content').innerHTML = '<p>Unable to load the requested report. Please try again later.</p>';
+            document.getElementById('toc').innerHTML = '';
         }
-        loadPost();
-    </script>
+    }
+
+    loadPost();
+</script>
 </body>
 </html>

@@ -31,9 +31,19 @@ const initSite = () => {
         const newMenuBtn = document.querySelector('.mobile-menu-btn');
 
         newMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent this click from immediately triggering the outside-click handler
             e.preventDefault();
             navLinks.classList.toggle('active');
             newMenuBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu when clicking anywhere outside the navbar
+        document.addEventListener('click', (e) => {
+            const navContainer = document.querySelector('.nav-container');
+            if (navContainer && !navContainer.contains(e.target)) {
+                navLinks.classList.remove('active');
+                newMenuBtn.innerHTML = '☰';
+            }
         });
     }
 };
@@ -41,7 +51,7 @@ const initSite = () => {
 // Run on initial load
 document.addEventListener('DOMContentLoaded', initSite);
 
-// Sync across tabs
+// Sync theme across tabs
 window.addEventListener('storage', () => {
     applyTheme(localStorage.getItem('theme'));
 });
