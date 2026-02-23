@@ -2,52 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cloudservicesllc.org/index.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/projects.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/blog.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/contact.html</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://cloudservicesllc.org/post.html?file=2026-02-19-aurora-dsql-launches-new-go-py.md</loc>
-    <lastmod>2026-02-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-18-amazon-connect-cases-now-suppo.md</loc>
-    <lastmod>2026-02-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://cloudservicesllc.org/post.html?file=2026-02-18-amazon-managed-grafana-now-sup.md</loc>
-    <lastmod>2026-02-19</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://cloudservicesllc.org/post.html?file=2026-02-18-amazon-aurora-dsql-now-integra.md</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-19-amazon-mq-now-supports-activem.md</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cloudservicesllc.org/post.html?file=2026-02-19-aurora-dsql-launches-new-go-py.md</loc>
+    <lastmod>2026-02-23</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cloudservicesllc.org/post.html?file=2026-02-18-amazon-managed-grafana-now-sup.md</loc>
+    <lastmod>2026-02-23</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-19-amazon-sns-now-supports-sendin.md</loc>
-    <lastmod>2026-02-19</lastmod>
+    <lastmod>2026-02-23</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cloudservicesllc.org/post.html?file=2026-02-23-amazon-rds-for-oracle-now-supp.md</loc>
+    <lastmod>2026-02-23</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cloudservicesllc.org/post.html?file=2026-02-23-amazon-ec2-g7e-instances-now-a.md</loc>
+    <lastmod>2026-02-23</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cloudservicesllc.org/post.html?file=2026-02-18-amazon-aurora-dsql-now-integra.md</loc>
+    <lastmod>2026-02-23</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cloudservicesllc.org/post.html?file=2026-02-23-aws-iam-identity-center-is-now.md</loc>
+    <lastmod>2026-02-23</lastmod>
     <priority>0.64</priority>
   </url>
 </urlset>
