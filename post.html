@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
     <style>
         /* ── Layout ── */
         .post-layout {
@@ -299,14 +300,25 @@
             // Update page title
             document.title = `${title} | Cloud Services LLC`;
 
-            // ── Render markdown ──
-            contentDiv.innerHTML = `
-                <div class="post-title-bar">
-                    <h1>${title}</h1>
-                    <span class="post-meta">${prettyDate}</span>
-                </div>
-                ${marked.parse(body)}
-            `;
+            // Render title and sanitized markdown to avoid script injection.
+            const titleBar = document.createElement('div');
+            titleBar.className = 'post-title-bar';
+            const titleEl = document.createElement('h1');
+            titleEl.textContent = title;
+            const metaEl = document.createElement('span');
+            metaEl.className = 'post-meta';
+            metaEl.textContent = prettyDate;
+            titleBar.appendChild(titleEl);
+            titleBar.appendChild(metaEl);
+
+            const renderedMarkdown = marked.parse(body);
+            const sanitizedHtml = DOMPurify.sanitize(renderedMarkdown);
+            const bodyContainer = document.createElement('div');
+            bodyContainer.innerHTML = sanitizedHtml;
+
+            contentDiv.innerHTML = '';
+            contentDiv.appendChild(titleBar);
+            contentDiv.appendChild(bodyContainer);
 
             // ── Make all links open in a new tab ──
             contentDiv.querySelectorAll('a').forEach(link => {
@@ -327,7 +339,10 @@
 
                     const li = document.createElement('li');
                     if (heading.tagName === 'H3') li.classList.add('toc-h3');
-                    li.innerHTML = `<a href="#${id}">${heading.innerText}</a>`;
+                    const tocLink = document.createElement('a');
+                    tocLink.href = `#${id}`;
+                    tocLink.textContent = heading.innerText;
+                    li.appendChild(tocLink);
                     tocList.appendChild(li);
                 });
             }

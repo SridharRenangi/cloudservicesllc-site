@@ -203,7 +203,11 @@
                 .sort((a, b) => b.name.localeCompare(a.name));
 
             if (posts.length === 0) {
-                listDiv.innerHTML = '<div class="blog-status">No findings published yet. Check back soon.</div>';
+                listDiv.innerHTML = '';
+                const status = document.createElement('div');
+                status.className = 'blog-status';
+                status.textContent = 'No findings published yet. Check back soon.';
+                listDiv.appendChild(status);
                 return;
             }
 
@@ -263,38 +267,67 @@
                 enrichedGroups[date].push(post);
             }
 
-            let html = '';
+            listDiv.innerHTML = '';
             for (const [date, datePosts] of Object.entries(enrichedGroups)) {
-                const countBadge = datePosts.length > 1
-                    ? `<span class="post-count">${datePosts.length}</span>`
-                    : '';
+                const dateGroup = document.createElement('div');
+                dateGroup.className = 'date-group';
 
-                html += `
-                    <div class="date-group">
-                        <div class="date-label">
-                            <time datetime="${date}">${formatDate(date)}${countBadge}</time>
-                        </div>
-                `;
+                const dateLabel = document.createElement('div');
+                dateLabel.className = 'date-label';
+                const timeEl = document.createElement('time');
+                timeEl.setAttribute('datetime', date);
+                timeEl.textContent = formatDate(date);
+                dateLabel.appendChild(timeEl);
 
-                for (const { file, title } of datePosts) {
-                    html += `
-                        <a class="post-card" href="post.html?file=${file.name}">
-                            <div class="post-card-body">
-                                <p class="post-card-title">${title}</p>
-                                <p class="post-card-sub">AWS &amp; DevOps Ecosystem Finding</p>
-                            </div>
-                            <span class="post-card-arrow">→</span>
-                        </a>
-                    `;
+                if (datePosts.length > 1) {
+                    const badge = document.createElement('span');
+                    badge.className = 'post-count';
+                    badge.textContent = String(datePosts.length);
+                    timeEl.appendChild(badge);
                 }
 
-                html += `</div>`;
+                dateGroup.appendChild(dateLabel);
+
+                for (const { file, title } of datePosts) {
+                    const card = document.createElement('a');
+                    card.className = 'post-card';
+                    card.href = `post.html?file=${encodeURIComponent(file.name)}`;
+
+                    const body = document.createElement('div');
+                    body.className = 'post-card-body';
+                    const titleEl = document.createElement('p');
+                    titleEl.className = 'post-card-title';
+                    titleEl.textContent = title;
+                    const sub = document.createElement('p');
+                    sub.className = 'post-card-sub';
+                    sub.textContent = 'AWS & DevOps Ecosystem Finding';
+                    body.appendChild(titleEl);
+                    body.appendChild(sub);
+
+                    const arrow = document.createElement('span');
+                    arrow.className = 'post-card-arrow';
+                    arrow.textContent = '→';
+
+                    card.appendChild(body);
+                    card.appendChild(arrow);
+                    dateGroup.appendChild(card);
+                }
+
+                listDiv.appendChild(dateGroup);
+            }
+            if (!listDiv.firstChild) {
+                const status = document.createElement('div');
+                status.className = 'blog-status';
+                status.textContent = 'No findings published yet. Check back soon.';
+                listDiv.appendChild(status);
             }
 
-            listDiv.innerHTML = html;
-
         } catch (err) {
-            listDiv.innerHTML = '<div class="blog-status">Error loading findings. Please check back soon.</div>';
+            listDiv.innerHTML = '';
+            const status = document.createElement('div');
+            status.className = 'blog-status';
+            status.textContent = 'Error loading findings. Please check back soon.';
+            listDiv.appendChild(status);
         }
     }
     fetchPosts();

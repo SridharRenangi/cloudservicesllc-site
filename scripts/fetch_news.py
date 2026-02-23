@@ -1,5 +1,6 @@
 import feedparser
 import os
+import hashlib
 from datetime import datetime
 
 # You can add more RSS feeds here as you grow
@@ -13,10 +14,19 @@ def update_blog():
         feed = feedparser.parse(url)
         # Get the 3 latest announcements
         for entry in feed.entries[:3]:
+            published = getattr(entry, "published_parsed", None) or getattr(entry, "updated_parsed", None)
+            if published:
+                date_str = datetime(*published[:6]).strftime('%Y-%m-%d')
+            else:
+                date_str = datetime.now().strftime('%Y-%m-%d')
+
             # Create a URL-friendly name for the file
             slug = "".join(x for x in entry.title if x.isalnum() or x in " -").strip().replace(" ", "-").lower()
-            date_str = datetime.now().strftime('%Y-%m-%d')
-            filename = f"blog/{date_str}-{slug[:30]}.md"
+            if not slug:
+                slug = "post"
+            unique_source = getattr(entry, "id", None) or getattr(entry, "link", None) or entry.title
+            unique_hash = hashlib.sha1(unique_source.encode("utf-8")).hexdigest()[:6]
+            filename = f"blog/{date_str}-{slug[:30]}-{unique_hash}.md"
 
             # Only create the file if it doesn't already exist
             if not os.path.exists(filename):
