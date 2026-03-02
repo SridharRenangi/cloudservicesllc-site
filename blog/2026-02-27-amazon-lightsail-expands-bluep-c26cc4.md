@@ -1,0 +1,10 @@
+---
+title: "Amazon Lightsail expands blueprint selection with a new WordPress blueprint"
+date: "2026-02-27"
+---
+
+# Amazon Lightsail expands blueprint selection with a new WordPress blueprint
+
+<p>Amazon Lightsail now offers a new WordPress blueprint, making it easier than ever to launch and manage a WordPress website on the cloud. With just a few clicks, you can create a Lightsail virtual private server (VPS) preinstalled with WordPress, and follow a guided setup wizard to get your site fully configured and running in minutes. This new blueprint has Instance Metadata Service Version 2 (IMDSv2) enforced by default.<br /> <br /> With Lightsail, you can easily get started on the cloud by choosing a blueprint and an instance bundle to build your web application. Lightsail instance bundles include instances preinstalled with your preferred operating system, storage, and monthly data transfer allowance, giving you everything you need to get up and running quickly. The new WordPress blueprint includes a step-by-step setup workflow that walks you through connecting a custom domain, configuring DNS, attaching a static IP address, and enabling HTTPS encryption using a free Let's Encrypt SSL/TLS certificate — all from within the Lightsail console.<br /> <br /> This new blueprint is now available in all <a href="https://docs.aws.amazon.com/en_us/lightsail/latest/userguide/understanding-regions-and-availability-zones-in-amazon-lightsail.html">AWS Regions where Lightsail is available</a>. For more information on blueprints supported on Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Lightsail documentation</a>. For more information on pricing, or to get started with your free trial, <a href="https://aws.amazon.com/lightsail/pricing/">click here.</a></p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/02/wordpress-blueprint-lightsail/)

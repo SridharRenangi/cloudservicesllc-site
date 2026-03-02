@@ -1,0 +1,10 @@
+---
+title: "EC2 Image Builder enhances lifecycle policies with wildcard support and simplified IAM"
+date: "2026-02-27"
+---
+
+# EC2 Image Builder enhances lifecycle policies with wildcard support and simplified IAM
+
+<p>EC2 Image Builder, a service that helps you automate the creation, distribution, and management of customized Amazon Machine Images, now supports wildcard patterns in lifecycle policies and simplifies IAM role creation. You can now use wildcard patterns to manage images from multiple recipes within a single lifecycle policy, and create IAM roles with pre-populated default permissions directly from the console.<br /> <br /> Previously, you had to create separate lifecycle policies for each new recipe or manually select individual recipes, making it difficult to scale as new recipes were added. Now with wildcard pattern support, you can specify patterns like my-recipe-1.x.x to automatically apply lifecycle policies to all matching recipes—including new recipes created in the future. Additionally, creating IAM roles for lifecycle management previously required manually configuring the required permissions. Now when creating a new role in the console, EC2 Image Builder automatically populates the required default permissions, reducing setup time and potential configuration errors. Together, these capabilities simplify onboarding and ongoing maintenance, enabling you to manage your image lifecycle at scale with less operational overhead.<br /> <br /> Lifecycle Policies are available in all commercial AWS regions. To learn more, refer to the <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/manage-image-lifecycles.html">documentation</a>.</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/02/ec2-image-builder-lifecycle-enhancements/)
