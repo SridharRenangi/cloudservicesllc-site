@@ -1,0 +1,10 @@
+---
+title: "Amazon Redshift introduces new array functions for semi-structured data processing"
+date: "2026-03-06"
+---
+
+# Amazon Redshift introduces new array functions for semi-structured data processing
+
+<p><a href="https://aws.amazon.com/redshift/">Amazon Redshift</a> now supports nine new array functions for working with semi-structured data stored in the <a href="https://docs.aws.amazon.com/redshift/latest/dg/super-overview.html">SUPER</a> data type. The new functions include ARRAY_CONTAINS, ARRAY_DISTINCT, ARRAY_EXCEPT, ARRAY_INTERSECTION, ARRAY_POSITION, ARRAY_POSITIONS, ARRAY_SORT, ARRAY_UNION, and ARRAYS_OVERLAP, enabling you to search, compare, sort, and transform arrays directly within your SQL queries. Previously, performing these operations required writing complex custom PartiQL SQL logic.<br /> <br /> These functions simplify complex data transformations and reduce query complexity by enabling sophisticated array operations in a single SQL statement. For example, you can use ARRAY_CONTAINS and ARRAY_POSITION for element lookup, ARRAY_INTERSECTION and ARRAY_EXCEPT for set operations, or ARRAY_SORT and ARRAY_DISTINCT to organize and deduplicate data. These functions are particularly valuable for applications involving nested data structures, event processing, and analytics workflows where data needs to be aggregated, filtered, or transformed at scale.<br /> <br /> The new Amazon Redshift array functions are available in all AWS Regions, including the AWS GovCloud (US) Regions, where Amazon Redshift is available. To learn more, please visit our <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Array_Functions.html">documentation</a>.</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-redshift-nine-new-array-functions/)
