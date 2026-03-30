@@ -1,0 +1,10 @@
+---
+title: "Amazon Timestream for InfluxDB Now Supports Advanced Metrics"
+date: "2026-03-27"
+---
+
+# Amazon Timestream for InfluxDB Now Supports Advanced Metrics
+
+<p>Amazon Timestream for InfluxDB now offers Advanced Metrics, providing comprehensive visibility into your database performance and health. This new capability automatically publishes detailed operational metrics from your Timestream for InfluxDB 2 instances directly to Amazon CloudWatch, enabling real-time monitoring and alerting without requiring additional configuration or instrumentation for both Single-AZ and Multi-AZ Timestream for InfluxDB 2 databases.<br /> <br /> With Advanced Metrics, customers can track critical database performance indicators, set up custom dashboards, and configure automated alerts based on predefined thresholds. This enhanced observability helps DevOps teams quickly identify potential issues, optimize database performance, and ensure high availability for time-series applications by providing deeper insights into resource utilization, query performance, and system health across their InfluxDB 2 environments.<br /> <br /> Amazon Timestream for InfluxDB Advanced Metrics is available in all <a href="https://docs.aws.amazon.com/general/latest/gr/timestream.html">Regions</a> where Timestream for InfluxDB is offered.<br /> <br /> To get started with Amazon Timestream for InfluxDB, visit the <a href="https://console.aws.amazon.com/timestream">Amazon Timestream for InfluxDB console</a>. For more information, see the <a href="https://docs.aws.amazon.com/timestream/">Amazon Timestream for InfluxDB documentation</a> and <a href="https://aws.amazon.com/timestream/pricing/">pricing page</a>.</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-timestream-for-influxdb-advanced-metrics/)
