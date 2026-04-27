@@ -1,0 +1,13 @@
+---
+title: "Amazon Quick now integrates with Visier’s Vee agent for workforce intelligence"
+date: "2026-04-24"
+---
+
+# Amazon Quick now integrates with Visier’s Vee agent for workforce intelligence
+
+<p>Amazon Quick now integrates with Vee, the AI assistant from Visier's people analytics platform, through the model context protocol (MCP). HR business partners, finance managers, and operations leaders can now get governed access to live workforce intelligence from Visier directly within their Amazon Quick workspace without switching tools.</p> 
+<p>After setting up the connection in Quick using Visier’s remote MCP server, you can ask questions in natural language about headcount, attrition, tenure, and open requisitions and receive answers grounded in Visier's governed workforce data model. Vee can also be invoked from automated Quick Flows to run recurring workforce reviews or draft documents. Quick intelligently routes relevant prompts to Vee and returns contextualized answers alongside enterprise knowledge – such as budgets, policies, and plans stored in Quick Spaces – so every answer reflects the full organizational picture.</p> 
+<p>The Visier integration with Amazon Quick is available in all AWS Regions where Amazon Quick is available.</p> 
+<p>To get started with Amazon Quick, <a href="https://aws.amazon.com/quick/" target="_blank">visit the website</a>. To learn more about the Visier integration, read the <a href="https://docs.aws.amazon.com/quick/latest/userguide/visier-integration.html" target="_blank">Visier integration guide</a>, see the <a href="https://aws.amazon.com/blogs/machine-learning/building-workforce-ai-agents-with-visier-and-amazon-quick/" target="_blank">blog</a>, and explore more integrations on the <a href="https://aws.amazon.com/quick/integrations/" target="_blank">integrations page</a>.</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-quick-visier-vee/)

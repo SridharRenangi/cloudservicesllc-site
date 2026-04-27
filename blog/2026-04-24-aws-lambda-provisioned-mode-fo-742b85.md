@@ -1,0 +1,12 @@
+---
+title: "AWS Lambda Provisioned Mode for Kafka event source mappings (ESMs) now available in AWS Asia Pacific (Taipei) and AWS GovCloud (US) Regions"
+date: "2026-04-24"
+---
+
+# AWS Lambda Provisioned Mode for Kafka event source mappings (ESMs) now available in AWS Asia Pacific (Taipei) and AWS GovCloud (US) Regions
+
+<p>AWS Lambda now supports Provisioned Mode for event source mappings (ESMs) that subscribe to Apache Kafka event sources in the Asia Pacific (Taipei), AWS GovCloud (US-East), and AWS GovCloud (US-West) Regions. Provisioned Mode allows you to optimize the throughput of your Kafka ESM by provisioning event polling resources that remain ready to handle sudden spikes in traffic, helping you build highly responsive and scalable event-driven Kafka applications with stringent performance requirements.</p> 
+<p>Customers building streaming data applications often use Kafka as an event source for Lambda functions, relying on Lambda's fully managed ESM to automatically scale polling resources in response to events. However, for event-driven Kafka applications that need to handle unpredictable bursts of traffic, lack of control over the throughput of ESM can lead to delays in your users' experience. Provisioned Mode for Kafka ESM enables customers to fine-tune the throughput of their Amazon Managed Streaming for Apache Kafka (MSK) ESM or self-managed Kafka ESM by provisioning and auto-scaling between a minimum and maximum number of polling resources called event pollers. With this launch, this feature is now available in three additional regions. &nbsp;</p> 
+<p>You can activate Provisioned Mode for MSK ESM or self-managed Kafka ESM by configuring a minimum and maximum number of event pollers in the ESM API, AWS Console, AWS CLI, AWS SDK, and AWS CloudFormation. You pay for the usage of event pollers, along a billing unit called Event Poller Unit (EPU). To learn more, read the <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html">Lambda ESM documentation</a> and <a href="https://aws.amazon.com/lambda/pricing/">AWS Lambda pricing</a>.&nbsp;</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/04/aws-Lambda-provisioned-esm-region-expansion/)
