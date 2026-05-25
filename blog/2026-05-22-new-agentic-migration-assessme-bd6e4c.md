@@ -1,0 +1,10 @@
+---
+title: "New agentic migration assessment capabilities now available with AWS Transform"
+date: "2026-05-22"
+---
+
+# New agentic migration assessment capabilities now available with AWS Transform
+
+<p>AWS Transform now offers advanced migration assessment capabilities including what-if scenarios, customizable assumptions, flexible file format support, and multiple new total cost of ownership (TCO) assessment features. These latest features let you quickly build a migration business case and accelerate your migration decisions.<br /> <br /> You can start your migration assessment with whatever data you have including RVTools exports, CMDB data, exports from the AWS Transform discovery tool, and a wide variety of third-party discovery tools. Create what-if scenarios for your migrations with customized assumptions including region, resource utilization, and service mapping. You can also compare scenarios and find the best path for your AWS migration. This latest release lets you include multiple analyses in your what-if scenarios including cost modelling of EC2, FSx, S3, SQL Server on EC2, and virtual desktops. On top of this, you can enhance your assessment with the inclusion of additional pillars of the <a href="https://aws.amazon.com/executive-insights/content/business-value-on-aws/">Cloud Value Framework</a> such as staff productivity, operational resilience, business agility, and sustainability.<br /> <br /> Now you can build a comprehensive assessment for migrating to AWS faster than ever before and start your migration with the confidence of having an optimized TCO.<br /> <br /> AWS Transform migration assessments are available in all AWS Regions where <a href="https://docs.aws.amazon.com/transform/latest/userguide/regions.html">AWS Transform is offered</a>. Learn more here on the <a href="https://docs.aws.amazon.com/transform/latest/userguide/what-is-service.html">user guide</a>.&nbsp;</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/05/assessment-capabilities-transform)
