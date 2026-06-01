@@ -1,0 +1,10 @@
+---
+title: "Amazon SES now offers inbox placement metrics and blocklist monitoring"
+date: "2026-05-29"
+---
+
+# Amazon SES now offers inbox placement metrics and blocklist monitoring
+
+<p>Today, Amazon Simple Email Service&nbsp;(SES) launched a new set of deliverability features that help customers get more information about their outbound sending deliverability performance and reputation. Customers can now see the percentage of messages that are placed in recipient spam folders based on samples of industry data, as well as see when their domains and IPs are listed on public email sender block lists. This makes it easier for customers to optimize their sending content to maximize customer engagement.&nbsp;<br /> <br /> Previously, customers could use SES' Virtual Deliverability Manager to visualize the full end-to-end journey of email deliverability metrics. This included delivery rates, bounce rates of various types, as well as complaint, open and click rates. Customers did not have visibility into how many emails were placed in the spam folder, making it difficult to estimate how many emails were actually seen by recipients. Now, based on representative data sampled from the industry, customers can see inbox placement rates by sending domain and campaign. Customers can also pro-actively test candidate email content to estimate inbox placement rates at top mailbox providers before sending to any of their target recipients. Finally, customers get peripheral awareness and passive monitoring of industry blocklist activity, helping to identify when a reputation change may affect their ability to send emails to mailbox providers.<br /> <br /> SES supports inbox placement rates and blocklist monitoring in all <a href="https://docs.aws.amazon.com/general/latest/gr/ses.html">AWS commercial regions</a> where SES is available.&nbsp;<br /> <br /> For more information, see the documentation for the <a href="https://docs.aws.amazon.com/ses/latest/dg/vdm-global-deliverability.html">Virtual Deliverability Manager global deliverability</a>.</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-ses-global-deliverability/)
