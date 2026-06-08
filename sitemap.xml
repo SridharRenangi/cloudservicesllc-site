@@ -2,277 +2,292 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cloudservicesllc.org/index.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/projects.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/blog.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/contact.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-06-amazon-redshift-introduces-new-5425b4.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-29-amazon-connect-customer-now-su-c8d7e5.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-29-amazon-ses-now-offers-inbox-pl-ae9670.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-23-amazon-ec2-g7e-instances-now-a.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-19-amazon-sns-now-supports-sendin.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-06-amazon-redshift-introduces-reu-e4442e.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-22-amazon-sagemaker-adds-business-e2a8d8.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cloudservicesllc.org/post.html?file=2026-06-05-amazon-opensearch-ui-is-now-av-7656fd.md</loc>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-20-amazon-eks-announces-9999-serv-5ab665.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-06-amazon-ec2-r8g-instances-now-a-5dfe38.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-27-aws-lambda-supports-up-to-32-g-724a73.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-17-amazon-ec2-high-memory-u7i-ins-24e9c3.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-08-amazon-connect-adds-default-st-9cdb49.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-27-ec2-image-builder-enhances-lif-47db62.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-08-aws-client-vpn-now-supports-ub-2e9726.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-18-amazon-managed-grafana-now-sup.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-22-new-agentic-migration-assessme-bd6e4c.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-15-amazon-cloudwatch-logs-announc-d099c8.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-03-apache-spark-troubleshooting-a-8c9cfb.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-27-amazon-timestream-for-influxdb-9162f3.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-24-aws-lambda-provisioned-mode-fo-742b85.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-17-amazon-sagemaker-hyperpod-now--7003a7.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cloudservicesllc.org/post.html?file=2026-06-05-simplified-permissions-for-ama-621440.md</loc>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-15-amazon-emr-serverless-is-now-a-ea73ae.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-27-amazon-lightsail-expands-bluep-c26cc4.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-03-aws-glue-schema-registry-is-no-7ee448.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-29-aws-end-user-messaging-rcs-for-5a3767.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-13-amazon-ec2-r8a-instances-are-n-944c5f.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-27-amazon-cloudwatch-logs-now-sup-b0036e.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-10-amazon-ec2-x8i-instances-are-n-de541e.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-27-arc-region-switch-adds-three-n-7afd2c.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-13-amazon-cloudwatch-application--19cbf9.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-23-amazon-rds-for-oracle-now-supp.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-10-aws-deadline-cloud-supports-mo-128886.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-17-amazon-ecr-pull-through-cache--5362dd.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-13-accelerate-serverless-applicat-cbca12.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-23-aws-iam-identity-center-is-now.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-24-amazon-quick-now-integrates-wi-8f605b.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-10-amazon-cloudwatch-pipelines-no-bc897c.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-03-amazon-sagemaker-data-agent-in-ba165c.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://cloudservicesllc.org/post.html?file=2026-06-05-amazon-bedrock-agentcore-runti-af4280.md</loc>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-04-24-amazon-bedrock-agentcore-gatew-c3fa7c.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-20-amazon-bedrock-agentcore-runti-fe36ed.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-19-aurora-dsql-launches-new-go-py.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-18-amazon-connect-cases-now-suppo.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-19-amazon-mq-now-supports-activem.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-08-amazon-route-53-global-resolve-2774e7.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-01-opensearch-ui-supports-cross-r-bb4b31.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-01-freertos-202604-lts-now-availa-cffeda.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-22-amazon-sagemaker-expands-domai-78d9f1.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-15-aws-partner-central-agents-now-77bd1b.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-03-20-aws-neuron-announces-support-f-2a05f1.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-02-18-amazon-aurora-dsql-now-integra.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://cloudservicesllc.org/post.html?file=2026-05-01-amazon-bedrock-agentcore-is-no-4a72cc.md</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <priority>0.64</priority>
   </url>
 </urlset>
