@@ -1,0 +1,12 @@
+---
+title: "Amazon CloudWatch Synthetics now supports multilocation canaries"
+date: "2026-06-18"
+---
+
+# Amazon CloudWatch Synthetics now supports multilocation canaries
+
+<p>Today, Amazon CloudWatch Synthetics announces support for multilocation canaries, allowing developers and site reliability engineers to run the same canary across multiple AWS Regions simultaneously from a single point of management. Previously, monitoring application availability from multiple geographic locations required creating and managing separate canaries in each Region, adding operational overhead and increasing the risk of configuration drift. With multilocation canaries, you create and manage a canary in one primary Region, and CloudWatch Synthetics automatically replicates it to the additional Regions you choose, consolidating all run data, metrics, and artifacts in the primary Region.</p> 
+<p>Multilocation canaries help you ensure consistent user experience worldwide, identify region-specific performance bottlenecks, and validate that third-party dependencies like CDNs and payment processors work across all locations. Replica canaries run independently, giving you resilient monitoring coverage across geographic locations. You can also configure alarms that activate only when issues are detected from multiple locations, increasing alert confidence and helping your team focus on real customer-impacting problems. Amazon CloudWatch Synthetics multilocation canaries are available in all AWS commercial Regions that support CloudWatch Synthetics. You can upgrade existing single-region canaries to multilocation by adding replica Regions without recreating them. For more information about regional availability, see the <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">AWS Region table</a>.</p> 
+<p>To learn more about CloudWatch Synthetics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html">Using synthetic monitoring</a> in the Amazon CloudWatch User Guide. To get started, visit the <a href="https://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a> product page.</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-cloudwatch-synthetics-multilocation/)
