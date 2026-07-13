@@ -1,0 +1,12 @@
+---
+title: "Amazon EC2 network/EBS instances now available in additional regions"
+date: "2026-07-10"
+---
+
+# Amazon EC2 network/EBS instances now available in additional regions
+
+<p>Starting today, Amazon Elastic Compute Cloud (Amazon EC2) R8in, R8ib, R8idn, and R8idb instances are available in the AWS Asia Pacific (Tokyo) and Europe (Frankfurt, Ireland) regions.&nbsp;These instances are powered by custom sixth generation Intel Xeon Scalable processors, available only on AWS and feature the latest sixth generation AWS Nitro cards. These instances deliver up to 43% better compute performance per vCPU compared to previous generation R6in and R6idn instances.</p> 
+<p>R8in, R8idn instances deliver 600 Gbps network bandwidth, the highest network bandwidth among enhanced networking EC2 instances. R8in instances are ideal for workloads such as real-time big data analytics, distributed web scale in-memory caches, caching fleets for AI/ML clusters, and Telco applications such as 5G User Plane Function (UPF). R8idn instances are ideal for network-intensive general purpose workloads requiring local storage, such as distributed compute, data analytics, and high-performance file systems.<br /> <br /> R8ib, R8idb instances deliver up to 300Gbps EBS bandwidth, the highest among non-accelerated compute EC2 instances. R8ib instances are best suited for workloads that benefit from high block storage performance, such as high-performance file systems and NoSQL databases. R8idb instances are ideal for storage-intensive general purpose workloads such as large commercial databases, data lakes, and NoSQL databases that benefit from both high EBS throughput and low-latency local NVMe storage.<br /> <br /> R8in, R8ib, R8idn, and R8idb instances support Elastic Fabric Adapter (EFA) networking on 48xlarge, 96xlarge, metal-48xl, and metal-96xl sizes. EFA networking enables lower latency and improved cluster performance for workloads deployed on tightly coupled clusters.</p> 
+<p>Amazon EC2 R8in an R8ib instances are available in US East (N. Virginia, Ohio), US West (Oregon),&nbsp;Asia Pacific (Tokyo), and Europe (Spain, Frankfurt, Ireland) regions, via Savings Plans, On-Demand, and Spot instances. For more information, visit the <a href="https://aws.amazon.com/ec2/instance-types/r8i/">Amazon EC2 R8i instance</a> page.</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/07/amazon-ec2-r8in-r8ib-r8idn-r8idb)
