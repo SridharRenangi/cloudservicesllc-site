@@ -1,0 +1,13 @@
+---
+title: "Nemotron 3.5 Super VL model now available on Amazon SageMaker JumpStart"
+date: "2026-10-16"
+---
+
+# Nemotron 3.5 Super VL model now available on Amazon SageMaker JumpStart
+
+<p>NVIDIA's Nemotron 3.5 Super VL is now available on Amazon SageMaker JumpStart, expanding the portfolio of foundation models available to AWS customers. This vision-language model from the Nemotron 3.5 family accepts images, video, and text as input and generates text, enabling customers to deploy multimodal AI solutions on AWS infrastructure.</p>
+<p>Nemotron 3.5 Super VL is designed for document intelligence, GUI understanding, video question answering, and multimodal agentic applications. It pairs a 120B-parameter hybrid Mixture-of-Experts (MoE) language backbone with 12B active parameters and a vision encoder, supporting context lengths of up to 1 million tokens. The model includes a built-in Multi-Token Prediction (MTP) head for speculative decoding to accelerate text generation, with reasoning configurable per request. It supports ten languages including English, French, Spanish, German, Japanese, Hindi, Korean, and Chinese. Post-trained with multimodal supervised fine-tuning on image, video, document, chart, and GUI data followed by GRPO reinforcement learning, it delivers structured JSON output, tool calling, and configurable reasoning for enterprise agent workflows. SageMaker JumpStart offers two variants: NVFP4 for optimized inference on G7 instances with NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs, and BF16 reference weights on ml.p5en.48xlarge for customization including SFT, RL, distillation, and domain adaptation.</p>
+<p>With SageMaker JumpStart, customers can deploy Nemotron 3.5 Super VL with just a few clicks to address their specific AI use cases.</p>
+<p>To get started with these models, navigate to the SageMaker JumpStart model catalog in the SageMaker console or use the SageMaker Python SDK to deploy the models to your AWS account. For more information about deploying and using foundation models in SageMaker JumpStart, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html">Amazon SageMaker JumpStart documentation</a>.</p>
+
+[Read original post](https://aws.amazon.com/about-aws/whats-new/2026/01/nvidia-nemotron-3.5-super-vl-on-sagemaker-jumpstart/)
